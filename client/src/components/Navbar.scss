@@ -1,0 +1,30 @@
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #CEE2F3;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #54a0ff;
+
+}
+.Logo {
+  display: flex;
+  flex-grow: 2;
+  padding-left: 2rem;
+  padding-top: 0rem;
+  font-size: 25px;
+  font-weight: 800;
+  justify-content: flex-start;
+
+}
+
+.Image {
+  width: 6rem;
+  height: 6rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
