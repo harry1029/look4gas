@@ -1,6 +1,8 @@
 import React from "react";
 import './Button.scss';
 import './Navbar.scss';
+import "./Gas_price.scss";
+
 
 
 const Navbar = () => {

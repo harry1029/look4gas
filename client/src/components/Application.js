@@ -1,6 +1,7 @@
 import './Application.scss';
 import useApplicationData from '../hooks/useApplicationData';
 import Navbar from './Navbar';
+import Gas_price from './Gas_price';
 
 const Application = () => {
   const {
@@ -11,8 +12,11 @@ const Application = () => {
   ));
   return (<div className="Application" >
     <Navbar>Nav</Navbar>
+    <div>
     <h1> Users </h1>
     <ul> {userList} </ul>
+    </div>
+    <Gas_price>Cheapest Gas Prices available in City</Gas_price>
   </div >
   );
 };
