@@ -1,0 +1,986 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Aap_uEAMaz1tScMCW-kazwW530lAhLgMFoWQI39m5cAFd6uSpphx8KlR0catZjh22WABuqIhWWBNorCqq4D_ldXglmQwH8yZxZqVYakG_B-wwN60CHBZK98s4fjNJv2trGlFbNJhzCb0z-fvDrqYpG7xirsH4Vr00QsQj0y0QmBUqDQg1k_hMxAaoFfwZnZDfLiRpGVoMn5yBLONt-xNhAIf1ftnLZ68NkZEFIbGABr2EBjHEKGj3MOKGjCAHiEVQTUQ4didT8hzdU9octCF-H23uqOlcp_9Br2M7HaGcC-PAhvpISulKxbV_EaQJHj7sAmb4VJoIL3vWl4HvwIPpP8ru4PWXAb9sSJgw_is9_MSbjd0YFT9j-Q1cdhU50qffwT9LWx4o_IO8h2E5StBXIkPXKHje2A",
+   "results" : [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "176 Front St E, Toronto, ON M5A 1E6, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.650709,
+               "lng" : -79.36757600000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.65194542989272,
+                  "lng" : -79.36615862010727
+               },
+               "southwest" : {
+                  "lat" : 43.64924577010728,
+                  "lng" : -79.36885827989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Esso",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3000,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109325482791434756165\"\u003eAyca Kartal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEA0RTI4zbH5P-VGLp7wjPgRipUtGdjTSv3RFqGYiiFm9XELOp5x15ruuAuSu80tSNAmRvKM4B1lG1oDpCeHuadiVOdnymql10u0GPpgm0wSOOoB8-SzmNr3Jqyh41KVr_8UJy79gahY1kq0Y1DM-bZDfuh_S7H-ugX6lDext2Lm-TY2",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJScLYYDrL1IkR7DVk4WI93Sc",
+         "plus_code" : {
+            "compound_code" : "MJ2J+7X Toronto, Ontario",
+            "global_code" : "87M2MJ2J+7X"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJScLYYDrL1IkR7DVk4WI93Sc",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 340
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "548 Richmond St E, Toronto, ON M5A 1R5, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.6548586,
+               "lng" : -79.3636434
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.65621617989272,
+                  "lng" : -79.36223882010727
+               },
+               "southwest" : {
+                  "lat" : 43.65351652010727,
+                  "lng" : -79.36493847989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Shell",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3456,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100716694660632176073\"\u003eEmmanuel Aquino\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uECnz4THAss9C_fGZQfCOC8H1x26KT1uQI9aAqzgO9Mz0-Ugm_l-yQ7ry4wCFlSzPik87GEhsj_EF_94qprcxXkwK15L2E7Zq5odeby9BZKyajqyqRK5YJ7eoP-a21yqB1t0JYnuncv-Tun1j4jivn1PFlvLWss5ba4WD1yIAqDyUD3J",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJyW-V1DjL1IkRW95AEyyfwM4",
+         "plus_code" : {
+            "compound_code" : "MJ3P+WG Toronto, Ontario",
+            "global_code" : "87M2MJ3P+WG"
+         },
+         "price_level" : 2,
+         "rating" : 3.7,
+         "reference" : "ChIJyW-V1DjL1IkRW95AEyyfwM4",
+         "types" : [
+            "gas_station",
+            "atm",
+            "convenience_store",
+            "meal_delivery",
+            "finance",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 139
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "241 Church St, Toronto, ON M5B 1Z4, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.656817,
+               "lng" : -79.376969
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.65813912989272,
+                  "lng" : -79.37575232010728
+               },
+               "southwest" : {
+                  "lat" : 43.65543947010728,
+                  "lng" : -79.37845197989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Esso",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105395482879654461975\"\u003eMichael Collins\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBEy0VXurtdOJoNDPV4dgckvSKpSaWIbwRDZmptlz8aAQU7h2DSDnWl226tI6Hnj25feuU7DYJQTdGcOq7dVMhMkUrNLPiVxqhy9Y11jaZ1gqAV3h1BDRIcehcBm1ZiDNKzmOuokuGtUbgCVU8YDWlN4fVk4YzxPnJPj-dZ47bcZlS9",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJG1DGpTXL1IkRco_TADv3R9E",
+         "plus_code" : {
+            "compound_code" : "MJ4F+P6 Toronto, Ontario",
+            "global_code" : "87M2MJ4F+P6"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJG1DGpTXL1IkRco_TADv3R9E",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 305
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1077 Yonge St, Toronto, ON M4W 2L5, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.679389,
+               "lng" : -79.39020529999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.68066522989272,
+                  "lng" : -79.38888142010728
+               },
+               "southwest" : {
+                  "lat" : 43.67796557010728,
+                  "lng" : -79.39158107989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Shell",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3672,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114751596470351574327\"\u003eJames Cullin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEDPi_UGI6IYJzjura8BE1hTDJntbqv7B-juO_xogi7XjFXNkkFXuJ5RtABtzUTAF0tZ9VVoFX-Ak6-f3c4lonvzMwrN5xsRYasajLWsRSucVq-wwPd4PbL85nY2YrIm3CPAxjAu4crpnsD_p2zoFYlBrRYbeJn8GFptR-pB3bsZmDjx",
+               "width" : 4896
+            }
+         ],
+         "place_id" : "ChIJq6AN6VczK4gRkmUaO_DIDiw",
+         "plus_code" : {
+            "compound_code" : "MJH5+QW Toronto, Ontario",
+            "global_code" : "87M2MJH5+QW"
+         },
+         "price_level" : 2,
+         "rating" : 3.7,
+         "reference" : "ChIJq6AN6VczK4gRkmUaO_DIDiw",
+         "types" : [
+            "gas_station",
+            "atm",
+            "convenience_store",
+            "meal_delivery",
+            "finance",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 72
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "581 Parliament St, Toronto, ON M4X 1P7, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.6670148,
+               "lng" : -79.36866549999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.66832427989272,
+                  "lng" : -79.36750597010727
+               },
+               "southwest" : {
+                  "lat" : 43.66562462010727,
+                  "lng" : -79.37020562989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Esso",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104210178940148134513\"\u003eFelipe v\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEDNfAc0EzKqezEeZBtiZaK25Ne5G18OjxjTSq2Yo-LN3Xn95NzKuXFLRvqcOfQWTO_eMxMT0Ow-MnfifqgcP37769f92KdouNBrbHIJ46fvCi2A6Mq0Z7i1Pp2jkK_HnXa-WiLvJrbEXcMvFwPeSO_enwPeWH6zh75u-rzvO4hnUoUe",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJoUteqlrL1IkRU6mfUFHI4rk",
+         "plus_code" : {
+            "compound_code" : "MJ8J+RG Toronto, Ontario",
+            "global_code" : "87M2MJ8J+RG"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJoUteqlrL1IkRU6mfUFHI4rk",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 325
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "799 Danforth Rd, Toronto, ON M1K 1H1, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.722808,
+               "lng" : -79.255048
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.72420092989272,
+                  "lng" : -79.25393282010728
+               },
+               "southwest" : {
+                  "lat" : 43.72150127010728,
+                  "lng" : -79.25663247989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Pioneer - Gas Station",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116171569198489095522\"\u003eMatt Brayman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEDasz3bXAKC1Z45GuYEGVZaNtPvzCcQRS-P8Zc2gAJibF1pKln6ZhxmXbrPgHPqQ0oJ7-_2OpOIGDAzeylgY_-PFEr4woJ8FKldbhYd9sMETaGAkh0kxDJ_zoC2H917903NpVpl2K5JpPRnYJjKai0zjd8TbYs86inHQBGG7yNpolVS",
+               "width" : 1960
+            }
+         ],
+         "place_id" : "ChIJAYsrWffP1IkRDv15vBjwdqM",
+         "plus_code" : {
+            "compound_code" : "PPFV+4X Toronto, Ontario",
+            "global_code" : "87M2PPFV+4X"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJAYsrWffP1IkRDv15vBjwdqM",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 85
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1800 Bayview Ave, Toronto, ON M4G 3C6, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.711743,
+               "lng" : -79.37756859999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.71320197989272,
+                  "lng" : -79.37632872010727
+               },
+               "southwest" : {
+                  "lat" : 43.71050232010727,
+                  "lng" : -79.37902837989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Shell",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108662696194789060003\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uECcA-zsytibsdwK-XQhTMfFI_5oQ9kSpvBjRpzhOAL9KZpW4ZrE29_Pxbyrp74mivoI7W_A1H5a_5PpuxNdNbUmSW6srgUfA6txNDy7LCNcJYo245ovGzzFaEOk5mATjJ8ORHFzzxXvXSbZ64GkmsZ92EkEwUXo76CYo34NkMWFIoBK",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJd5CmWdTM1IkR7VdcvqIF_pw",
+         "plus_code" : {
+            "compound_code" : "PJ6C+MX Toronto, Ontario",
+            "global_code" : "87M2PJ6C+MX"
+         },
+         "price_level" : 2,
+         "rating" : 3.7,
+         "reference" : "ChIJd5CmWdTM1IkR7VdcvqIF_pw",
+         "types" : [
+            "gas_station",
+            "atm",
+            "convenience_store",
+            "meal_delivery",
+            "finance",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 52
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "381 Mt Pleasant Rd, Toronto, ON M4S 2L5, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.6986254,
+               "lng" : -79.3861824
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.69982357989272,
+                  "lng" : -79.38465327010728
+               },
+               "southwest" : {
+                  "lat" : 43.69712392010728,
+                  "lng" : -79.38735292989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Esso",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108815439967300969586\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAkRhGWkRNJDgaLsi68jDt491-0l8oYkwtWcHOG_NoarxNgwppGtmK-4kAGaxESbqoBWA_oLzVfrOlTf9_MrZ_xCgHMbMFTbHPWsYN9bVGVsTxBBsM6w7rQsG4_kSSbeKtfD8Sh9_KnsHEOPwue7TYDsiJHjoanLtpBfHOK-XnJCiH3",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJMxntczYzK4gR_dqbUyYKGX0",
+         "plus_code" : {
+            "compound_code" : "MJX7+FG Toronto, Ontario",
+            "global_code" : "87M2MJX7+FG"
+         },
+         "rating" : 4,
+         "reference" : "ChIJMxntczYzK4gR_dqbUyYKGX0",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 258
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "866 Avenue Rd, Toronto, ON M5P 2K3, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.6985868,
+               "lng" : -79.4063525
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.69993377989271,
+                  "lng" : -79.40501427010727
+               },
+               "southwest" : {
+                  "lat" : 43.69723412010727,
+                  "lng" : -79.40771392989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Esso",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3492,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110283806464517525682\"\u003eByung Don Jang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEChAno6r6ULqbBOGSDIT_uzEhhTeSumshOluQzgHZ1AFSuBqE_hXMU2NzjgH9UPa1vzaAABEWCPcQzkW8JX3GOiFuTw8AjHbaFe8_4YcgxoHGDmrw-EcQppq_78lmQm3I_V8IUWY0_X8SQOHAJimGTr9C9E5zPje71Evlz4MNBbfM_m",
+               "width" : 4656
+            }
+         ],
+         "place_id" : "ChIJLVbjLWszK4gRx5T-YjrJAuY",
+         "plus_code" : {
+            "compound_code" : "MHXV+CF Toronto, Ontario",
+            "global_code" : "87M2MHXV+CF"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJLVbjLWszK4gRx5T-YjrJAuY",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 166
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "536 Mt Pleasant Rd, Toronto, ON M4S 2M2, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.70218,
+               "lng" : -79.388058
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.70356417989272,
+                  "lng" : -79.38654032010727
+               },
+               "southwest" : {
+                  "lat" : 43.70086452010727,
+                  "lng" : -79.38923997989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Petro-Canada",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1932,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107361564184876838735\"\u003eVinny\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEALD3v8WHCYRyXMCNuSPD0oTHg0Fwmqqm0QS0QmEXuskyU9DmjB186Hus3L714-eHO7trpCzxmbc1ew40KxCQ5AxigA_MK3h8Ptd8ej-HkhyMwf5AsXK19gGo6-pIhVnk7eDle3vB1XWW9yM-lyTVWkOdNjko5j1vKSievmqWi_rVn7",
+               "width" : 2576
+            }
+         ],
+         "place_id" : "ChIJeVmhMDEzK4gRw-GB6ViN7eA",
+         "plus_code" : {
+            "compound_code" : "PJ26+VQ Toronto, Ontario",
+            "global_code" : "87M2PJ26+VQ"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJeVmhMDEzK4gRw-GB6ViN7eA",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 41
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "117 Jarvis St, Toronto, ON M5C 2H6, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.653019,
+               "lng" : -79.372186
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.65420592989272,
+                  "lng" : -79.37118192010728
+               },
+               "southwest" : {
+                  "lat" : 43.65150627010727,
+                  "lng" : -79.37388157989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Petro-Canada",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113036725207736941957\"\u003eChuan Chee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAbwD_JidkxD_ixHJ4U1sEbbM0RSDEF0c8NirwK-VLhG7lDLSXIUAQPW4uapTGZYHoctyDrWt75PLILK_p6MUa7scHEndOYyThHgFyK9fxvEdDcV3sax0tbmNsbdGGuBcPZMU4CRnx1kHckCWw1Sn4dDfAI4pUpguLf0SzUnRpTPqCz",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ5WmsMzHL1IkRUHFubYiwDLI",
+         "plus_code" : {
+            "compound_code" : "MJ3H+64 Toronto, Ontario",
+            "global_code" : "87M2MJ3H+64"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJ5WmsMzHL1IkRUHFubYiwDLI",
+         "types" : [
+            "gas_station",
+            "convenience_store",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 284
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1840 Bayview Ave, North York, ON M4G 3C9, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.7136169,
+               "lng" : -79.3779071
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.71498882989272,
+                  "lng" : -79.37643212010727
+               },
+               "southwest" : {
+                  "lat" : 43.71228917010728,
+                  "lng" : -79.37913177989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Esso",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 6936,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102676783838521291780\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEA2sxObVCvQcis8ExaCX5aVH76lpB-xb-vV4O9gdpwCyz1MvlTRuVPxYzQjkDpYTGQA1AZue4o5j1dJyEdakGfhp-VXNfPctifR0wIbHFp9TXIkEzhceHV_mHYdC4Fh16uIWwnFEPAi1dLjdXINSyraRJ5ym43Sh4qKCWCLiTJSqg5r",
+               "width" : 9248
+            }
+         ],
+         "place_id" : "ChIJQ-F_yoosK4gRw1EwU6XjzDg",
+         "plus_code" : {
+            "compound_code" : "PJ7C+CR North York, Toronto, ON",
+            "global_code" : "87M2PJ7C+CR"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJQ-F_yoosK4gRw1EwU6XjzDg",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 251
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "38 Spadina Ave., Toronto, ON M5V 2H8, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.6442659,
+               "lng" : -79.3949277
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.64553392989273,
+                  "lng" : -79.39345867010728
+               },
+               "southwest" : {
+                  "lat" : 43.64283427010728,
+                  "lng" : -79.39615832989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Shell",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105644538778724590931\"\u003eLEONARD ENG\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAyFDdzGhGUtPMVQfsSeFug7eHEtc-GaXKM26twA6TToVoyGY0dQsPyaXpxzkipd-BPMH1jcWezKWe1CTZObvAW984oqa_ynbSpSoqjv3NuX7xozh2MAnuFuVbyDRnTbGm0UCinyNcEFZoPhu_5YIcJpqetEw7GRFCas9kwNQt9rL2L",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJv1nLC9k0K4gRbxJTCUZ16aE",
+         "plus_code" : {
+            "compound_code" : "JJV4+P2 Toronto, Ontario",
+            "global_code" : "87M2JJV4+P2"
+         },
+         "price_level" : 2,
+         "rating" : 3.6,
+         "reference" : "ChIJv1nLC9k0K4gRbxJTCUZ16aE",
+         "types" : [
+            "gas_station",
+            "atm",
+            "convenience_store",
+            "meal_delivery",
+            "finance",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 145
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "952 King St W, Toronto, ON M6K 1E4, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.6421869,
+               "lng" : -79.41237509999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.64342907989272,
+                  "lng" : -79.41098202010727
+               },
+               "southwest" : {
+                  "lat" : 43.64072942010728,
+                  "lng" : -79.41368167989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Esso",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102165707865258250513\"\u003eBhakti L.\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEBOgA_bBn4ch0qM2scR0OSpevy7XLGH3roWWots8lGmfCtyAllcBNTEQl3VuWg5U4r__SqD9b3wUTJlDOp_NF5AG9bkAQsX0X2Avb2VC_pm2ZjOWYBqRGwL0XT3DrA4DgG9AoweLsgUbPkSj0028IrEOlJCXoWDKs0UjO8avN3pL8XT",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJa4w0YR01K4gRCYuZxIGXo5o",
+         "plus_code" : {
+            "compound_code" : "JHRQ+V2 Toronto, Ontario",
+            "global_code" : "87M2JHRQ+V2"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJa4w0YR01K4gRCYuZxIGXo5o",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 386
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1762 Dundas St W, Toronto, ON M6K 1V6, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.650461,
+               "lng" : -79.44031699999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.65185392989273,
+                  "lng" : -79.43907317010728
+               },
+               "southwest" : {
+                  "lat" : 43.64915427010728,
+                  "lng" : -79.44177282989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Ultramar - Gas Station",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 608,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110972897939027189025\"\u003eUltramar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAaaOwl9FfVvNPHBJlvgVfc0dIG33AKO8q1N5p82-XW2wRWTE-nzgOjXSgAaqmdxYMkK7yFXa4F5iuKZeOxBDaoGI5xpL4UVqnsoxlFNP5WzV5aT1JrjWF0IBZr9mlPZw6kTuAtZlzn4LdJT9-xV__b5P8dwsfznbxhqGAQp0gHvpLq",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJ52BOVBdTV0AREJdhn7SRjxo",
+         "plus_code" : {
+            "compound_code" : "MH25+5V Toronto, Ontario",
+            "global_code" : "87M2MH25+5V"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ52BOVBdTV0AREJdhn7SRjxo",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 171
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2265 Danforth Ave, Toronto, ON M4C 1K5, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.686556,
+               "lng" : -79.308184
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.68799517989272,
+                  "lng" : -79.30687322010728
+               },
+               "southwest" : {
+                  "lat" : 43.68529552010727,
+                  "lng" : -79.30957287989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Petro-Canada",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2736,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108822761296561478687\"\u003ePatrick Asselin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAlADOzl1OJpglBuzU2Q72heluEFhY7hdQ3xJ0lsVUogg45Fl3ghWHoSBQeSKtxGPwhKn0XH8tTRqAj2Oxfv_zOlWnHOJ3TaWmBglS0OE5zQKtPDkrXizrI5ku3x7Hk2IHYumvNZQL9-lKMR6uJPlTykR1J-kg7axHDDGObaEz48Mbc",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJy-q_RxTM1IkRi1Vj1aaX3-Q",
+         "plus_code" : {
+            "compound_code" : "MMPR+JP Toronto, Ontario",
+            "global_code" : "87M2MMPR+JP"
+         },
+         "rating" : 3.5,
+         "reference" : "ChIJy-q_RxTM1IkRi1Vj1aaX3-Q",
+         "types" : [
+            "gas_station",
+            "convenience_store",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+         ],
+         "user_ratings_total" : 131
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "505 Jarvis St, Toronto, ON M4Y 2H7, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.666637,
+               "lng" : -79.378028
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.66801147989273,
+                  "lng" : -79.37654387010728
+               },
+               "southwest" : {
+                  "lat" : 43.66531182010728,
+                  "lng" : -79.37924352989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Petro-Canada",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107784446047328392728\"\u003eAlina Ma\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAK545KH-UIcSZqnn0RHENRtQiHATeNKPwThJ5XKX4jCOG1BGkEC1YxpBOn7dHjTGICYvsUGVdyXp0CkiZ9Z48esED539Sgoh3Xrp0dkKCfHPf_C2gpFUZMPVCEfM-DPjHJf_cGRdxkpMDcW16eezHo17KXt8pqyaWbz9rClakSi9Ly",
+               "width" : 1960
+            }
+         ],
+         "place_id" : "ChIJV0wYEk3L1IkRF7xAoyixolE",
+         "plus_code" : {
+            "compound_code" : "MJ8C+MQ Toronto, Ontario",
+            "global_code" : "87M2MJ8C+MQ"
+         },
+         "rating" : 4,
+         "reference" : "ChIJV0wYEk3L1IkRF7xAoyixolE",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 406
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "600 Victoria Park Ave, Toronto, ON M4E 3T6, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.6870786,
+               "lng" : -79.28714590000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.68849562989273,
+                  "lng" : -79.28583047010729
+               },
+               "southwest" : {
+                  "lat" : 43.68579597010728,
+                  "lng" : -79.28853012989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Mobil",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3120,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105960850309206341475\"\u003eA Khan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAoWYT_aqFwx1EFmFFijmEIpoDPUBifb7ATnQGqiDIw88v32L214wIkYonU_8R_OxoDT7V3i8gsdCcHw5qT9Ijszi7jzpxps-nw30YxActfyMNUWYmdcO4HPJP4dNaujQoMV6rOuLbYDKrOZaKPB9hhQz8yPlQzIDExz_ZDewxZRQ8m",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJL42Er8XP1IkRRFjjnpfCILo",
+         "plus_code" : {
+            "compound_code" : "MPP7+R4 Toronto, Ontario",
+            "global_code" : "87M2MPP7+R4"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJL42Er8XP1IkRRFjjnpfCILo",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 158
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "449 Carlaw Ave, Toronto, ON M4K 3H9, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.6691582,
+               "lng" : -79.3431149
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.67042662989272,
+                  "lng" : -79.34173202010727
+               },
+               "southwest" : {
+                  "lat" : 43.66772697010727,
+                  "lng" : -79.34443167989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Mobil",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105320414435507617357\"\u003eGigi Tsui\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEA9kaJHqvQf2XCCagTRKjMKwKn5--MMC8PcJyCt4JKwf_PdvNFX1uBkJOsv8lkdSVK8wB0cdC735hnImT4QoTSGu5TqBfdJ6UaTACl7tPD9sxA9jOqJg5WS-YAvx1SKWkWc0XL_2AjjSEEDI7lMuG_S0Pk3P0VDjS8xyu6Zq8p6ZQzK",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJr_nlh3vL1IkRmd04dMEmskM",
+         "plus_code" : {
+            "compound_code" : "MM94+MQ Toronto, Ontario",
+            "global_code" : "87M2MM94+MQ"
+         },
+         "rating" : 4,
+         "reference" : "ChIJr_nlh3vL1IkRmd04dMEmskM",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 238
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1232 Bayview Ave, Toronto, ON M4G 3A1, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 43.697017,
+               "lng" : -79.37231899999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 43.69840152989272,
+                  "lng" : -79.37077762010726
+               },
+               "southwest" : {
+                  "lat" : 43.69570187010728,
+                  "lng" : -79.37347727989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/gas_station-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/gas_pinlet",
+         "name" : "Petro-Canada",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4160,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101665584581382446077\"\u003eNivin Bose\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aap_uEAw61G-sSjTnCSuFe3NkVO8FI5AL-FfWPVgDXB4I9U-vCwZUvZ8yuq1SdCHDtXJciYh5GCKs10Wrs9zNSvfVEYrP2Rl1NaVrOKlTihO0XHDlbf6JaTSLZXvKTk2AFCr0iv_pKSBqiCDmzo6EyFT4uwyzxzSEDBJRKLB-C3wn9VLIOm5",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJzQx2NcjM1IkRSiKF7-cdmEA",
+         "plus_code" : {
+            "compound_code" : "MJWH+R3 Toronto, Ontario",
+            "global_code" : "87M2MJWH+R3"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJzQx2NcjM1IkRSiKF7-cdmEA",
+         "types" : [ "gas_station", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 52
+      }
+   ],
+   "status" : "OK"
+}
