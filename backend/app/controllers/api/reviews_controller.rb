@@ -1,6 +1,8 @@
 class Api::ReviewsController < ApplicationController
   def index
     @reviews = Review.all
-    render json: @reviews
+    render :json => {
+      reviews: @reviews
+    }
   end
 end

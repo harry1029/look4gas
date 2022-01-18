@@ -2,7 +2,12 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    render json: @users
+
+    # Render JSON in object format
+    render :json => {
+      users: @users
+    }
+    
   end
 
 end
