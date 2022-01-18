@@ -4,22 +4,28 @@ import Navbar from "./components/Navbar";
 import NoPage from "./components/NoPage";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import GasPriceItem from "./components/GasPriceItem";
+import Application from "./components/Application";
+import Home from "./components/Home";
+import Gas_station_list from "./components/Gas_stations_list";
 
-export default function Application() {
+export default function AllRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navbar />}>
+        <Route path="/" element={<Application />}>
+          <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="*" element={<NoPage />} />
+          <Route path="gas_price_item" element={<GasPriceItem />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
 
-ReactDOM.render(<Application />, document.getElementById("root"));
+ReactDOM.render(<AllRoutes />, document.getElementById("root"));
 
 
 
