@@ -1,4 +1,6 @@
 export const SET_USERS = 'SET_USERS';
+export const SET_GAS_STATIONS = 'SET_GAS_STATIONS';
+
 
 const dataReducer = (state, action) => {
     switch (action.type) {
@@ -6,7 +8,14 @@ const dataReducer = (state, action) => {
             return {
                 ...state,
                 users: action.users,
-                    loading: false,
+                loading: false,
+            };
+            return state;
+        case SET_GAS_STATIONS:
+            return {
+                ...state,
+                users: action.set_gas_stations,
+                loading: false,
             };
         default:
             return state;
