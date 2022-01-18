@@ -29,12 +29,13 @@ const useApplicationData = () => {
 
   // Initialize state data with useState here
   const [state, setState] = useState({
-    provinces: {},
-    cities: {},
-    gas_stations: {},
-    reviews: {},
-    price_updates: {},
-    currentUser: {}
+    provinces: [],
+    cities: [],
+    gasStations: [],
+    reviews: [],
+    priceUpdates: [],
+    currentUser: [],
+    loggedIn: false
   });
 
   // [] empty only run on first load
@@ -54,9 +55,8 @@ const useApplicationData = () => {
     ]).then((all) => {
       const [first, second, third, forth, fifth] = all;
 
-      setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gas_stations: third.data, reviews: forth.data, prices_updates: fifth.data }));
-      console.log(state);
-      console.log("Refresh!");
+      setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gasStations: third.data, reviews: forth.data, pricesUpdates: fifth.data }));
+      console.log("Initialize!");
     })
   }, [])
 
