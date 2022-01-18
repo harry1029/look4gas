@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import NoPage from "./components/NoPage";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Gas_price from "./components/Gas_price";
 
 export default function Application() {
   return (
@@ -13,6 +14,7 @@ export default function Application() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="*" element={<NoPage />} />
+          <Route path="gas_price" element={<Gas_price />} />
         </Route>
       </Routes>
     </BrowserRouter>
