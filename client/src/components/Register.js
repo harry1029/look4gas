@@ -22,6 +22,27 @@ export default function Register() {
       <h2>Register to Look4Gas</h2>
       <br></br>
       <br></br>
+      
+      <div class="form-group">
+      <label for="first_name">Enter your First Name:</label>
+      <input  id="first_name"
+        type="text" 
+        name="first_name" 
+        value={inputs.first_name || ""} 
+        onChange={handleChange}
+      />
+      </div>
+
+      <div class="form-group">
+      <label for="last_name">Enter your Last Name:</label>
+      <input  id="last_name"
+        type="text" 
+        name="last_name" 
+        value={inputs.last_name || ""} 
+        onChange={handleChange}
+      />
+      </div>
+
       <div class="form-group">
       <label for="email">Enter your email:</label>
       <input  id="email"
@@ -30,8 +51,8 @@ export default function Register() {
         value={inputs.email || ""} 
         onChange={handleChange}
       />
-      
       </div>
+
       <div class="form-group">
       <label for="password">Enter your password:</label>
         <input  id="password"
@@ -40,8 +61,8 @@ export default function Register() {
           value={inputs.password || ""} 
           onChange={handleChange}
         />
-        
         </div>
+
         <input type="submit" className="button"/>
     </form>
   )
