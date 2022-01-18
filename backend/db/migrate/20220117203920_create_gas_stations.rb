@@ -4,7 +4,7 @@ class CreateGasStations < ActiveRecord::Migration[7.0]
       t.string :name
       t.decimal :rating
       t.string :address
-      t.integer :city_id
+      t.references :city, foreign_key: true
       t.string :station_phone
       t.decimal :regular_price
       t.decimal :ultra_price
