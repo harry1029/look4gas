@@ -10,29 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_203920) do
+ActiveRecord::Schema.define(version: 2022_01_18_034637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.bigint "province_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["province_id"], name: "index_cities_on_province_id"
+  end
 
   create_table "gas_stations", force: :cascade do |t|
     t.string "name"
     t.decimal "rating"
     t.string "address"
-    t.integer "city_id"
+    t.bigint "city_id"
     t.string "station_phone"
     t.decimal "regular_price"
     t.decimal "ultra_price"
     t.decimal "premium_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_gas_stations_on_city_id"
+  end
+
+  create_table "price_updates", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "gas_station_id"
+    t.datetime "time_ago", precision: 6
+    t.index ["gas_station_id"], name: "index_price_updates_on_gas_station_id"
+    t.index ["user_id"], name: "index_price_updates_on_user_id"
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "comment"
+    t.decimal "user_rating"
+    t.bigint "user_id"
+    t.bigint "gas_station_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gas_station_id"], name: "index_reviews_on_gas_station_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "email"
     t.string "password"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "cities", "provinces"
+  add_foreign_key "gas_stations", "cities"
+  add_foreign_key "price_updates", "gas_stations"
+  add_foreign_key "price_updates", "users"
+  add_foreign_key "reviews", "gas_stations"
+  add_foreign_key "reviews", "users"
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     # Routes for api fetching
-    resources :users, :gas_stations
+    resources :users, :gas_stations, :reviews, :provinces, :cities, :price_updates
     
     resource :persons, only: [:create]
     post "/login", to: "persons#login"
