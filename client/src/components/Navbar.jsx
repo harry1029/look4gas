@@ -11,7 +11,8 @@ const Navbar = () => {
           </div>
 
           <div className="Logo">
-            <h1> Look4Gas </h1>
+            <Link to="/"><h1> Look4Gas </h1></Link>
+            
           </div>
 
        
