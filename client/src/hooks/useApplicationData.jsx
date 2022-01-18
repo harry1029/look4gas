@@ -31,10 +31,10 @@ const useApplicationData = () => {
   const [state, setState] = useState({
     provinces: {},
     cities: {},
-    gas_stations,
+    gas_stations: {},
     reviews: {},
-    price_updates: {}
-
+    price_updates: {},
+    currentUser: {}
   });
 
   // [] empty only run on first load
@@ -55,11 +55,11 @@ const useApplicationData = () => {
       const [first, second, third, forth, fifth] = all;
 
       setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gas_stations: third.data, reviews: forth.data, prices_updates: fifth.data }));
+      console.log(state);
       console.log("Refresh!");
     })
   }, [])
 
-  console.log(state)
 
   // Return all state after initialization => components/Application.jsx
   return {
