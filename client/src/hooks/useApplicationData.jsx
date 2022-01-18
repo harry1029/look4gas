@@ -1,11 +1,9 @@
-import {
-  useEffect,
-  useReducer
-} from 'react';
+import { useState, useEffect } from "react";
+import axios from 'axios';
+
 import dataReducer, {
   SET_USERS
 } from '../reducer/data_reducer';
-import axios from 'axios';
 
 const useApplicationData = () => {
   // const [state, dispatch] = useReducer(dataReducer, {
@@ -29,11 +27,14 @@ const useApplicationData = () => {
   //         .catch((err) => console.log(err));
   // }, []);
 
+  // Initialize state data with useState here
   const [state, setState] = useState({
-    day: "Monday",
-    days: [],
+    provinces: {},
+    cities: {},
+    gas_stations,
     reviews: {},
-    cities: {}
+    price_updates: {}
+
   });
 
   // [] empty only run on first load
@@ -53,14 +54,16 @@ const useApplicationData = () => {
     ]).then((all) => {
       const [first, second, third, forth, fifth] = all;
 
-      setState(prev => ({ ...prev, days: first.data, appointments: second.data, interviewers: third.data }));
+      setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gas_stations: third.data, reviews: forth.data, prices_updates: fifth.data }));
       console.log("Refresh!");
     })
   }, [])
 
+  console.log(state)
+
+  // Return all state after initialization => components/Application.jsx
   return {
-      state,
-      dispatch,
+      state
   };
 
 };
