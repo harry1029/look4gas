@@ -7,7 +7,7 @@ const Navbar = () => {
     <>
       <nav className="Navbar">
           <div>
-            <img className="Image" src='../../public/gas_logo.png' width={182} height={64} />
+            <img className="Image" src='gas_logo.png'/>
           </div>
 
           <div className="Logo">
