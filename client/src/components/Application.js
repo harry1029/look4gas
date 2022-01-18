@@ -16,7 +16,7 @@ const Application = () => {
     <h1> Users </h1>
     <ul> {userList} </ul>
     </div>
-    <Gas_price>Cheapest Gas Prices available in City</Gas_price>
+    <Gas_price></Gas_price>
   </div >
   );
 };
