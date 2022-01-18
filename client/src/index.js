@@ -19,6 +19,7 @@ export default function AllRoutes() {
           <Route path="register" element={<Register />} />
           <Route path="*" element={<NoPage />} />
           <Route path="gas_price_item" element={<GasPriceItem />} />
+          <Route path="gas_station_list" element={<Gas_station_list />} />
         </Route>
       </Routes>
     </BrowserRouter>
