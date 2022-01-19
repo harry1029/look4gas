@@ -11,7 +11,9 @@ import Login from "./Login";
 import Register from "./Register";
 import GasPriceItem from "./GasPriceItem";
 import Home from "./Home";
-import Gas_station_list from "./Gas_stations_list";
+import GasPriceItem from "./GasPriceItem";
+import GasPriceItemList from "./GasPriceItemList";
+import Reviews from "./Reviews";
 
 
 export default function Application(props) {
@@ -59,7 +61,8 @@ export default function Application(props) {
             <Route path="register" element={<Register />} />
             <Route path="*" element={<NoPage />} />
             <Route path="gas_price_item" element={<GasPriceItem />} />
-            <Route path="gas_station_list" element={<Gas_station_list />} />
+            <Route path="gas_price_item_list" element={<GasPriceItemList />} />
+            <Route path="reviews" element={<Reviews />} />
         </Routes>
       </div>
     </BrowserRouter>
