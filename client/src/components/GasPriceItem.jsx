@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router-dom";
 import "./GasPriceItem.scss";
 import "./Navbar.scss";
 
@@ -23,9 +24,21 @@ export default function GasPriceItem(props) {
           2 hours ago <br></br>
         </div>
       </div>
-      <div className="details_link">
-        Details
+      <div className="details_link ">
+        <button
+          className="button reviewbutton">
+          <Link to="/submit_price">Submit Price</Link>
+        </button>
+
+        <br></br>
+
+        <button
+          className="button reviewbutton">
+          <Link to="/reviews">Reviews</Link>
+        </button>
       </div>
+    <Outlet />
+
     </div>
 
 
