@@ -1,32 +1,12 @@
+import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import NoPage from "./components/NoPage";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import GasPriceItem from "./components/GasPriceItem";
 import Application from "./components/Application";
-import Home from "./components/Home";
-import Gas_station_list from "./components/Gas_stations_list";
 
-export default function AllRoutes() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Application />}>
-          <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="*" element={<NoPage />} />
-          <Route path="gas_price_item" element={<GasPriceItem />} />
-          <Route path="gas_station_list" element={<Gas_station_list />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-ReactDOM.render(<AllRoutes />, document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <Application />
+  </React.StrictMode>
+, document.getElementById("root"));
 
 
 

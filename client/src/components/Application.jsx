@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import './Application.scss';
 import useApplicationData from '../hooks/useApplicationData';
-import Navbar from './Navbar';
-import GasPriceItem from './GasPriceItem';
 
 // Using react-router
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import Navbar from "./Navbar";
+import NoPage from "./NoPage";
+import Login from "./Login";
+import Register from "./Register";
+import GasPriceItem from "./GasPriceItem";
+import Home from "./Home";
+import Gas_station_list from "./Gas_stations_list";
+
 
 export default function Application(props) {
   
@@ -40,10 +47,20 @@ export default function Application(props) {
   }, [])
   
   return (
-  <div className="Application" >
-    <Navbar/>
-    <h1> Currently Logged in as: </h1>
-    <ul> {formatName(state.currentUser)} </ul>
-  </div >
-  );
+    <BrowserRouter>
+      <div div className="Application" >
+        <Navbar />
+        <h1> Currently Logged in as: </h1>
+        <ul> {formatName(state.currentUser)} </ul>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="*" element={<NoPage />} />
+            <Route path="gas_price_item" element={<GasPriceItem />} />
+            <Route path="gas_station_list" element={<Gas_station_list />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  )
 };
