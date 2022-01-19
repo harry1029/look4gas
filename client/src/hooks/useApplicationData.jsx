@@ -34,7 +34,7 @@ const useApplicationData = () => {
     gasStations: [],
     reviews: [],
     priceUpdates: [],
-    currentUser: [],
+    currentUser: {},
     loggedIn: false
   });
 
@@ -58,12 +58,13 @@ const useApplicationData = () => {
       setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gasStations: third.data, reviews: forth.data, pricesUpdates: fifth.data }));
       console.log("Initialize!");
     })
+
   }, [])
 
 
   // Return all state after initialization => components/Application.jsx
   return {
-      state
+      state, setState
   };
 
 };

@@ -1,20 +1,47 @@
 import { useState } from "react";
-import ReactDOM from "react-dom";
+import axios from "axios";
 import "./Login.scss";
 import "./Button.scss";
 
+import { getUser } from "../helpers/loginHelper";
+
+import { useNavigate } from "react-router-dom";
+
 export default function Login() {
-  const [inputs, setInputs] = useState({});
+  const [user, setUser] = useState({ email: '', password: ''});
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
+    setUser(values => ({...values, [name]: value}))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(inputs);
+    console.log(user);
+
+    const email = user.email;
+    const pass = user.password;
+
+    const url = "http://localhost:3001/api/users";
+    await axios
+      .get(url)
+      .then((res) => {
+        const result = getUser(res.data, email, pass);
+        console.log("Result: ", result);
+        if (!result) {
+          console.log("User does not exist!")
+        } else {
+          setUser(result);
+
+          // User local storage to set key: user, with a user value if found
+          localStorage.setItem("user", JSON.stringify(result));
+          navigate("/");
+        }
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -25,10 +52,11 @@ export default function Login() {
       <br></br>
       <div className="form-group">
       <label for="email">Enter your email:</label>
-      <input  id="email"
+      <input  
+        id="email"
         type="text" 
         name="email" 
-        value={inputs.email || ""} 
+        value={user.email || ""} 
         onChange={handleChange}
       />
       
@@ -38,7 +66,7 @@ export default function Login() {
         <input  id="password"
           type="password" 
           name="password" 
-          value={inputs.password || ""} 
+          value={user.password || ""} 
           onChange={handleChange}
         />
         
