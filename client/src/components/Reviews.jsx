@@ -18,7 +18,7 @@ export default function Reviews() {
             address: 123 Test street <br></br>
             station_phone: #123
           </div>
-        
+
         </div>
 
         <div className="details_link ">
@@ -37,11 +37,25 @@ export default function Reviews() {
 
       </div>
 
-      <ReviewItem />
+      <div className="main_block">
+        <div className="details_block">
+          <div className="station_details">
+            <h2> price ultra </h2>
+          </div>
+          <div className="station_details">
+            <h2> price ultra </h2>
+          </div>
 
+          <div className="station_details">
+            <h2> price premium </h2>
+          </div>
+        </div>
+        </div>
+
+        <ReviewItem />
       <Outlet />
     </>
-    
-      
+
+
   );
 }

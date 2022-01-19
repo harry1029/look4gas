@@ -1,3 +1,4 @@
+
 export default function ReviewItem () {
   return (
     <div className="main_block">
@@ -9,7 +10,7 @@ export default function ReviewItem () {
             Posted by: User Name <br></br>
             Posted at: 23/09/2020
           </div>
-        
+          
         </div>
 
         <div className="details_link ">
@@ -17,6 +18,7 @@ export default function ReviewItem () {
           This Gas station is very nice
           
         </div>
+
 
       </div>
   );
