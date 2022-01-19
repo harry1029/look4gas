@@ -11,7 +11,6 @@ import Login from "./Login";
 import Register from "./Register";
 import GasPriceItem from "./GasPriceItem";
 import Home from "./Home";
-import GasPriceItem from "./GasPriceItem";
 import GasPriceItemList from "./GasPriceItemList";
 import Reviews from "./Reviews";
 
