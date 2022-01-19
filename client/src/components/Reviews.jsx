@@ -2,6 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import "./Reviews.scss";
 import "./Button.scss";
 import "./GasPriceItem.scss";
+import ReviewItem from "./ReviewItem";
 export default function Reviews() {
 
   return (
@@ -30,11 +31,14 @@ export default function Reviews() {
 
           <button
             className="button reviewbutton">
-            <Link to="/reviews">Reviews</Link>
+            <Link to="/write_review">Write Review</Link>
           </button>
         </div>
 
       </div>
+
+      <ReviewItem />
+
       <Outlet />
     </>
     

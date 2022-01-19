@@ -13,6 +13,7 @@ import GasPriceItem from "./GasPriceItem";
 import Home from "./Home";
 import GasPriceItemList from "./GasPriceItemList";
 import Reviews from "./Reviews";
+import WriteReview from "./WriteReview";
 
 
 export default function Application(props) {
@@ -62,6 +63,7 @@ export default function Application(props) {
             <Route path="gas_price_item" element={<GasPriceItem />} />
             <Route path="gas_price_item_list" element={<GasPriceItemList />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="write_review" element={<WriteReview />} />
         </Routes>
       </div>
     </BrowserRouter>
