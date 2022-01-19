@@ -53,7 +53,8 @@ export default function Application(props) {
         <h1> Currently Logged in as: </h1>
         <ul> {formatName(state.currentUser)} </ul>
         <Routes>
-            <Route path="/" element={<Home />} />
+          {/* Pass props to routes */}
+            <Route path="/" element={<Home gasStations={state.gasStations}/>} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="*" element={<NoPage />} />

@@ -1,7 +1,9 @@
 import "./GasPriceItem.scss";
 import "./Navbar.scss";
 
-export default function GasPriceItem() {
+export default function GasPriceItem(props) {
+
+  const { key, name, rating, cityId, phone, regular, ultra, premium } = props;
 
   return (
     <div className="main_block">
