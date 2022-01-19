@@ -28,7 +28,6 @@ export default function Application(props) {
     return user.first_name + ' ' + user.last_name;
   }
 
-  console.log(state.currentUser.first_name);
 
   // Display some dummy stations on screen for now
   // const gasStationList = state.gasStations.map((station) => (<li key={station.id} > {station.name} {station.rating} {station.address} </li>));

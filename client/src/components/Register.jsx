@@ -2,19 +2,33 @@ import { useState } from "react";
 import "./Login.scss";
 import "./Button.scss";
 
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 export default function Register() {
-  const [inputs, setInputs] = useState({});
+  const [info, setInfo] = useState({ first_name: "", last_name: "", email: "", password: "", phone: ""});
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({ ...values, [name]: value }))
-  }
+    setInfo(values => ({ ...values, [name]: value }))
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputs);
-  }
+    console.log(info);
+
+    const url = "http://localhost:3001/api/users/";
+    axios
+      .post(url, info)
+      .then((res) => {
+        console.log(res.data);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <form onSubmit={handleSubmit} className="Login">
@@ -28,7 +42,7 @@ export default function Register() {
         <input id="first_name"
           type="text"
           name="first_name"
-          value={inputs.first_name || ""}
+          value={info.first_name || ""}
           onChange={handleChange}
         />
       </div>
@@ -38,7 +52,7 @@ export default function Register() {
         <input id="last_name"
           type="text"
           name="last_name"
-          value={inputs.last_name || ""}
+          value={info.last_name || ""}
           onChange={handleChange}
         />
       </div>
@@ -48,7 +62,7 @@ export default function Register() {
         <input id="email"
           type="text"
           name="email"
-          value={inputs.email || ""}
+          value={info.email || ""}
           onChange={handleChange}
         />
       </div>
@@ -58,7 +72,7 @@ export default function Register() {
         <input id="password"
           type="password"
           name="password"
-          value={inputs.password || ""}
+          value={info.password || ""}
           onChange={handleChange}
         />
       </div>
@@ -68,7 +82,7 @@ export default function Register() {
         <input id="phone"
           type="text"
           name="phone"
-          value={inputs.phone || ""}
+          value={info.phone || ""}
           onChange={handleChange}
         />
       </div>
