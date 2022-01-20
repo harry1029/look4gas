@@ -7,7 +7,7 @@ import axios from "axios";
 
 import { useEffect } from "react";
 
-import { getUserIdFromPriceUpdate } from "../helpers/selectors";
+import { getUserIdFromPriceUpdate, getPriceUpdate } from "../helpers/selectors";
 
 export default function GasPriceItem(props) {
 
@@ -18,6 +18,8 @@ export default function GasPriceItem(props) {
 
   console.log("Updates: ", priceUpdates);
   const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, stationId);
+
+  const priceUpdate = getPriceUpdate(priceUpdates, stationId)
 
 
 
@@ -49,7 +51,8 @@ export default function GasPriceItem(props) {
           regular_price: {regular} <br></br>
           {!userInfo && <p>Loading...</p>}
           {userInfo && <p>submitted by: {userInfo.first_name}</p>} <br></br>
-          2 hours ago <br></br>
+          {!priceUpdate && <p>---</p>}
+          {priceUpdate && <p>{priceUpdate.time_ago}</p>} <br></br>
         </div>
       </div>
       <div className="details_link ">
