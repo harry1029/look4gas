@@ -26,6 +26,8 @@ export default function Application(props) {
   const currentStations = state.gasStations
   console.log("Current Stations:", currentStations)
 
+  console.log("State Updates: ", state.priceUpdates)
+
   function formatName(user) {
     return user.first_name + ' ' + user.last_name;
   }
@@ -45,6 +47,7 @@ export default function Application(props) {
       setState(prev => ({ ...prev, loggedIn: true, currentUser: result}));
       console.log("IS LOGGED IN: ", state.loggedIn);
     }
+
   }, [])
   
   return (
@@ -55,7 +58,7 @@ export default function Application(props) {
         <ul> {formatName(state.currentUser)} </ul>
         <Routes>
           {/* Pass props to routes */}
-            <Route path="/" element={<Home gasStations={state.gasStations}/>} />
+            <Route path="/" element={<Home gasStations={state.gasStations} priceUpdates={state.priceUpdates}/>} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="*" element={<NoPage />} />
