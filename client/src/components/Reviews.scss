@@ -17,6 +17,11 @@
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.rows {
+display: flex;
+flex-direction: column;
+}
+
 .ReviewSubform {
   display: flex;
   flex-direction: column;

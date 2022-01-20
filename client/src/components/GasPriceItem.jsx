@@ -41,7 +41,7 @@ export default function GasPriceItem(props) {
         <div>
           <img className="gas_station_image" src='pioneer.png' />
         </div>
-        <div className="station_details">
+        <div className="station_details rows">
           name: {name} <br></br>
           rating: {rating} <br></br>
           address: {address} <br></br>

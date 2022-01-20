@@ -1,3 +1,4 @@
+
 import React from "react";
 import ReviewItem from "./ReviewItem";
 
@@ -5,7 +6,8 @@ export default function ReviewItemList(props) {
 
   const { stationId, priceUpdates, reviews } = props;
 
-  const stationReviews = reviews.filter(review => review.id == stationId);
+  const stationReviews = props.reviews.filter(review => review.gas_station_id == stationId);
+  console.log("station reviews", stationReviews);
 
   const parsedReviewItem = stationReviews.map(x =>
     <ReviewItem

@@ -30,12 +30,12 @@ export default function WriteReview(props) {
     event.preventDefault();
     console.log(inputs);
 
-    const url = "http://localhost:3001/api/reviews/";
+    const url = "http://localhost:3001/api/reviews";
     axios
       .post(url, inputs)
       .then((res) => {
         console.log(res.data);
-        navigate("/reviews");
+        navigate(`/reviews/${gasStation.id}`);
       })
       .catch((err) => console.log(err));
   };
