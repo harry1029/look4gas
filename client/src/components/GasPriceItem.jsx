@@ -47,9 +47,8 @@ export default function GasPriceItem(props) {
         </div>
         <div className="gas_price">
           regular_price: {regular} <br></br>
-          submitted by: 
           {!userInfo && <p>Loading...</p>}
-          {userInfo && <p>{userInfo.first_name}</p>} <br></br>
+          {userInfo && <p>submitted by: {userInfo.first_name}</p>} <br></br>
           2 hours ago <br></br>
         </div>
       </div>

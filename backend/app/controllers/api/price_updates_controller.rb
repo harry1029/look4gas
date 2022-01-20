@@ -8,7 +8,7 @@ class Api::PriceUpdatesController < ApplicationController
   def index
     @price_updates = PriceUpdate.all
 
-    @price_updates.each {|x| x[:id2] = 2 }
+    @price_updates.each {|x| x.time_ago = "#{distance_of_time_in_words(Time.now, x.created_at)} ago"}
     render json: @price_updates
   end
 
