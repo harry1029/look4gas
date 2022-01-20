@@ -6,15 +6,26 @@ import TextareaAutosize from '@mui/base/TextareaAutosize';
 import axios from "axios";
 import "./Login.scss";
 import "./Button.scss";
-
 import { getUser } from "../helpers/loginHelper";
-
 import { useNavigate } from "react-router-dom";
 
 export default function SubmitPrice(props) {
   let { id } = useParams();
   console.log("use params WRITE REVIEW", id);
   const gasStation = props.gasStations.find(gasStation => gasStation.id == id);
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(inputs);
+  }
+
 
   return (
     <div className="WriteReview">
@@ -46,6 +57,38 @@ export default function SubmitPrice(props) {
 
         </div>
       </div>
+      
+    <form onSubmit={handleSubmit}>
+
+      
+      <label>Enter Regular Price:
+      <input 
+        type="number" 
+        name="regular_price" 
+        value={inputs.regular_price || ""} 
+        onChange={handleChange}
+      />
+      </label>
+      <label>Enter Ultra Price:
+        <input 
+          type="number" 
+          name="ultra_price" 
+          value={inputs.ultra_price || ""} 
+          onChange={handleChange}
+        />
+        </label>
+        <label>Enter Premium Price:
+      <input 
+        type="number" 
+        name="premium_price" 
+        value={inputs.premium_price || ""} 
+        onChange={handleChange}
+      />
+      </label>
+        <input type="submit" />
+    </form>
+
+
     </div>
   );
 }

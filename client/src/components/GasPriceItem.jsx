@@ -53,7 +53,7 @@ export default function GasPriceItem(props) {
           <div>
             <Rating
               name="text-feedback"
-              value={rating}
+              value={props.rating}
               readOnly
               precision={0.5}
               emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
