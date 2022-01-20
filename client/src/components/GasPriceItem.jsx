@@ -34,7 +34,7 @@ export default function GasPriceItem(props) {
 
         <button
           className="button reviewbutton">
-          <Link to="/reviews">Reviews</Link>
+          <Link to="/reviews">Details</Link>
         </button>
       </div>
     <Outlet />

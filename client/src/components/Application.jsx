@@ -62,7 +62,7 @@ export default function Application(props) {
             <Route path="gas_price_item" element={<GasPriceItem />} />
             <Route path="gas_price_item_list" element={<GasPriceItemList />} />
             <Route path="reviews" element={<Reviews />} />
-            <Route path="write_review" element={<WriteReview />} />
+            <Route path="write_review" element={<WriteReview user={state.currentUser} gasStations={state.gasStations}/>} />
         </Routes>
       </div>
     </BrowserRouter>

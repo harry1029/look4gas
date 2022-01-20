@@ -37,22 +37,50 @@ export default function Reviews() {
 
       </div>
 
-      <div className="main_block">
-        <div className="details_block">
-          <div className="station_details">
-            <h2> price ultra </h2>
+      <div className="PriceBlock">
+        <div className="PriceHeadings">
+          <div className="StationPrice center">
+            Regular
           </div>
-          <div className="station_details">
-            <h2> price ultra </h2>
+          <div className="StationPrice center ">
+            Ultra
           </div>
-
-          <div className="station_details">
-            <h2> price premium </h2>
+          <div className="StationPrice center">
+            Premium
           </div>
         </div>
+        <div>
+          <div className="details_block ">
+            <div className="StationPrice BorderRight center">
+              <h2> 139 </h2>
+            </div>
+            <div className="StationPrice BorderRight center">
+              <h2> 149 </h2>
+            </div>
+            <div className="StationPrice center">
+              <h2> 160 </h2>
+            </div>
+          </div>
+
+          <div className="PriceHeadings">
+            <div className="StationPrice center">
+              User3 <br></br> <br></br>
+              2 hours ago
+            </div>
+            <div className="StationPrice center ">
+              User3 <br></br> <br></br>
+              2 hours ago
+            </div>
+            <div className="StationPrice center">
+              User3 <br></br> <br></br>
+              2 hours ago
+            </div>
+          </div>
         </div>
 
-        <ReviewItem />
+      </div>
+
+      <ReviewItem />
       <Outlet />
     </>
 
