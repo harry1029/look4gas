@@ -1,4 +1,7 @@
-export default function ReviewItem () {
+import momemt from "moment";
+export default function ReviewItem (props) {
+  const { comment, user_rating, user_id, gas_station_id, created_at } = props;
+
   return (
     <div className="main_block">
         <div className="details_block">
@@ -9,7 +12,7 @@ export default function ReviewItem () {
             Posted by: User Name <br></br>
             Posted at: 23/09/2020
           </div>
-        
+          
         </div>
 
         <div className="details_link ">
@@ -17,6 +20,7 @@ export default function ReviewItem () {
           This Gas station is very nice
           
         </div>
+
 
       </div>
   );

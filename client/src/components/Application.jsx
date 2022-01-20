@@ -14,10 +14,12 @@ import Home from "./Home";
 import GasPriceItemList from "./GasPriceItemList";
 import Reviews from "./Reviews";
 import WriteReview from "./WriteReview";
+import ReviewItem from "./ReviewItem";
 
 
 export default function Application(props) {
-  
+  console.log("application props", props);
+
   const {
     state, setState
   } = useApplicationData();
@@ -64,8 +66,9 @@ export default function Application(props) {
             <Route path="*" element={<NoPage />} />
             <Route path="gas_price_item" element={<GasPriceItem />} />
             <Route path="gas_price_item_list" element={<GasPriceItemList />} />
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="write_review" element={<WriteReview />} />
+            <Route path="reviews/:id" element={<Reviews gasStations={state.gasStations} user={state.currentUser}/>} />
+            <Route path="reviews_item" element={<ReviewItem reviews={state.reviews} gasStations={state.gasStations} user={state.currentUser}/>} />
+            <Route path="write_review/:id" element={<WriteReview user={state.currentUser} gasStations={state.gasStations}/>} />
         </Routes>
       </div>
     </BrowserRouter>
