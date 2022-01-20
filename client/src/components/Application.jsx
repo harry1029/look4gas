@@ -15,6 +15,8 @@ import GasPriceItemList from "./GasPriceItemList";
 import Reviews from "./Reviews";
 import WriteReview from "./WriteReview";
 import ReviewItem from "./ReviewItem";
+import StationRating from "./Rating";
+import SubmitPrice from "./SubmitPrice";
 
 
 export default function Application(props) {
@@ -70,6 +72,10 @@ export default function Application(props) {
             <Route path="reviews/:id" element={<Reviews gasStations={state.gasStations} user={state.currentUser} priceUpdates={state.priceUpdates} reviews={state.reviews}/>} />
             <Route path="reviews_item" element={<ReviewItem reviews={state.reviews} gasStations={state.gasStations} user={state.currentUser}/>} />
             <Route path="write_review/:id" element={<WriteReview user={state.currentUser} gasStations={state.gasStations}/>} />
+            <Route path="rating" element={<StationRating gasStations={state.gasStations} reviews={state.reviews}/>} />
+            <Route path="submit_price/:id" element={<SubmitPrice gasStations={state.gasStations} user={state.currentUser} priceUpdates={state.priceUpdates} reviews={state.reviews}/>} />
+
+
         </Routes>
       </div>
     </BrowserRouter>

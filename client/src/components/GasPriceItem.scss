@@ -4,9 +4,9 @@
   margin-top: 7rem;
   background-color: #CEE2F3;
   width: 40rem;
-  height: 12rem;
+  height: 15rem;
   justify-content: space-evenly;
-  margin-left: 30rem;
+  margin-left: 27.5rem;
   margin-right: 30rem;
   margin-top: 2rem;
   border-radius: 1rem;
@@ -23,6 +23,7 @@
   
   
 }
+
 .station_details {
   display: flex;
   flex-grow: 2;
@@ -32,16 +33,18 @@
   padding-bottom: 1rem;
 }
 
-.GasRows {
+.GasStationRows {
   display: flex;
   flex-direction: column;
   }
 
 .gas_price {
   display: flex;
-  align-items: center;
+  direction: column;
+  align-items: flex-start;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-top: 1.2rem;
   border-width: 3px;
   border-style: solid;
   border-color: #54a0ff;
@@ -63,6 +66,20 @@
   justify-content: center;
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #54a0ff;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+
+.further_link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
   border-width: 3px;
   border-style: solid;
   border-color: #54a0ff;
