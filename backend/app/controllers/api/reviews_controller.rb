@@ -1,6 +1,10 @@
 class Api::ReviewsController < ApplicationController
+  require 'date'
+
   def index
     @reviews = Review.all
+
+    # @reviews.map {|x| x.created_at = "#{x.created_at.strftime('%a, %e %b %Y')}"}
     render json: @reviews
   end
 

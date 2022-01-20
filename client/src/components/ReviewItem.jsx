@@ -1,6 +1,20 @@
-import momemt from "moment";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+
 export default function ReviewItem (props) {
-  const { comment, user_rating, user_id, gas_station_id, created_at } = props;
+
+  const { comment, rating, userId, stationId, createdAt } = props;
+
+  const [userInfo, setUserInfo] = useState();
+
+  useEffect(() => {
+    axios.get(`http://localhost:3001/api/users/${userId}`)
+    .then(response => {
+      setUserInfo(response.data);
+      console.log(response.data)
+    });
+  }, []);
 
   return (
     <div className="main_block">
@@ -9,16 +23,14 @@ export default function ReviewItem (props) {
             <img className="gas_station_image" src='abc.png' alt="User Avatar" />
           </div>
           <div className="station_details">
-            Posted by: User Name <br></br>
-            Posted at: 23/09/2020
+            {userInfo && <p>{`Posted by: ${userInfo.first_name}`}</p>}
+            {userInfo && <p>{`Posted at: ${createdAt.split('T')[0]}`}</p>}
           </div>
           
         </div>
 
         <div className="details_link ">
-          
-          This Gas station is very nice
-          
+          {comment}
         </div>
 
 

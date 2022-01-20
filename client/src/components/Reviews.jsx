@@ -4,16 +4,26 @@ import "./Reviews.scss";
 import "./Button.scss";
 import "./GasPriceItem.scss";
 import { useParams } from "react-router-dom";
-import ReviewItem from "./ReviewItem";
+import ReviewItemList from "./ReviewItemList";
+import { getPriceUpdate } from "../helpers/selectors";
+
 export default function Reviews(props) {
+
+  const { gasStations, priceUpdates, reviews } = props;
+
   console.log("Review props", props);
   let { id } = useParams();
   console.log("use params", id);
   const gasStation = props.gasStations.find(gasStation => gasStation.id == id);
+
   console.log("props gas station", props.gasStations);
   console.log("found gas station", gasStation);
+
+
+
   const time = "2022-01-19 17:34:23.199108";
   const timeago = moment('Thu Oct 25 2018 17:30:03 GMT+0300').fromNow();
+
   console.log("time ago:", timeago);
 
   return (
@@ -24,10 +34,10 @@ export default function Reviews(props) {
             <img className="gas_station_image" src='pioneer.png' />
           </div>
           <div className="station_details">
-            Name: {gasStation.name} <br></br>
-            Rating: {gasStation.rating} <br></br>
-            Address: {gasStation.address}, Toronto, ON <br></br>
-            Phone: {gasStation.station_phone}
+            Name: {gasStation && gasStation.name}<br></br>
+            Rating: {gasStation && gasStation.rating} <br></br>
+            Address: {gasStation && gasStation.address}, Toronto, ON <br></br>
+            Phone: {gasStation && gasStation.station_phone}
           </div>
 
         </div>
@@ -63,13 +73,13 @@ export default function Reviews(props) {
         <div>
           <div className="details_block ">
             <div className="StationPrice BorderRight center">
-              <h2> 139 </h2>
+              <h2> {gasStation && gasStation.regular_price} </h2>
             </div>
             <div className="StationPrice BorderRight center">
-              <h2> 149 </h2>
+              <h2> {gasStation && gasStation.ultra_price} </h2>
             </div>
             <div className="StationPrice center">
-              <h2> 160 </h2>
+              <h2> {gasStation && gasStation.premium_price} </h2>
             </div>
           </div>
 
@@ -91,7 +101,7 @@ export default function Reviews(props) {
 
       </div>
 
-      <ReviewItem />
+      <ReviewItemList stationId={id} reviews={reviews}/>
       <Outlet />
     </>
 
