@@ -47,47 +47,46 @@ export default function GasPriceItem(props) {
           <img className="gas_station_image" src='pioneer.png' />
         </div>
         <div className="station_details StationDetail">
-            <div>
-              Name: {name}
-            </div>
-            <div>
-              <Rating
-                name="text-feedback"
-                value={rating}
-                readOnly
-                precision={0.5}
-                emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
-              />
-            </div>
-            <div>
-              Address: { address}, Toronto, ON <br></br>
-            </div>
-            <div>
-              Phone: {phone}
-            </div>
+          <div>
+            Name: {name}
           </div>
-        
+          <div>
+            <Rating
+              name="text-feedback"
+              value={rating}
+              readOnly
+              precision={0.5}
+              emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
+            />
+          </div>
+          <div>
+            Address: {address}, Toronto, ON <br></br>
+          </div>
+          <div>
+            Phone: {phone}
+          </div>
+        </div>
+
+
         <div className="gas_price StationDetail">
           <div>
-          regular_price: {regular}
+            regular_price: {regular}
           </div>
           <div>
-          {!userInfo && <p>Loading...</p>}
-          {userInfo && <p>submitted by: {userInfo.first_name}</p>}
+            {!userInfo && <p>Loading...</p>}
+            {userInfo && <p>submitted by: {userInfo.first_name}</p>}
           </div>
           <div>
-          {!priceUpdate && <p>---</p>}
-          {priceUpdate && <p>{moment(priceUpdate.created_at).fromNow()}</p>} <br></br>
+            {!priceUpdate && <p>---</p>}
+            {priceUpdate && <p>{moment(priceUpdate.created_at).fromNow()}</p>}
+          </div>
         </div>
       </div>
-      <div className="details_link ">
+      <div className="further_link ">
         <button
           className="button reviewbutton">
           <Link to={`/submit_price/${stationId}`}>Submit Price</Link>
         </button>
-
-        <br></br>
-
         <button
           className="button reviewbutton">
           <Link to={`/reviews/${stationId}`}>Details</Link>
