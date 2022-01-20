@@ -40,13 +40,13 @@ export default function Reviews(props) {
               Name: {gasStation && gasStation.name}
             </div>
             <div>
-              <Rating
+            {gasStation && <Rating
                 name="text-feedback"
                 value={gasStation.rating}
                 readOnly
                 precision={0.5}
                 emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
-              />
+              />}
             </div>
             <div>
               Address: {gasStation && gasStation.address}, Toronto, ON <br></br>
