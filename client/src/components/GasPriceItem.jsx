@@ -7,6 +7,8 @@ import axios from "axios";
 
 import { useEffect } from "react";
 
+import moment from 'moment';
+
 import { getUserIdFromPriceUpdate, getPriceUpdate } from "../helpers/selectors";
 
 export default function GasPriceItem(props) {
@@ -52,7 +54,7 @@ export default function GasPriceItem(props) {
           {!userInfo && <p>Loading...</p>}
           {userInfo && <p>submitted by: {userInfo.first_name}</p>} <br></br>
           {!priceUpdate && <p>---</p>}
-          {priceUpdate && <p>{priceUpdate.time_ago}</p>} <br></br>
+          {priceUpdate && <p>{moment(priceUpdate.created_at).fromNow()}</p>} <br></br>
         </div>
       </div>
       <div className="details_link ">
