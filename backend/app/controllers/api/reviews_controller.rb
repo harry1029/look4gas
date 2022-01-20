@@ -12,4 +12,22 @@ class Api::ReviewsController < ApplicationController
     @review = Review.find_by_id(params[:id])
     render json: @review
   end
+  
+  def create
+    @reviews = Review.new(review_params)
+
+    if @reviews.save
+        render :json => {
+        success: true,
+      }
+    else
+      render :json => {message: "Review not created"}
+    end
+  end
+
+  def review_params
+    params.require(:review).permit(:comment, :user_rating, :user_id, :gas_station_id)
+  end
+
+  
 end

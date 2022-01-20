@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import moment from "moment";
 import axios from "axios";
 
 
 export default function ReviewItem (props) {
 
   const { comment, rating, userId, stationId, createdAt } = props;
+  //{`Posted at: ${createdAt.split('T')[0]}`}
 
   const [userInfo, setUserInfo] = useState();
 
@@ -22,9 +24,10 @@ export default function ReviewItem (props) {
           <div>
             <img className="gas_station_image" src='abc.png' alt="User Avatar" />
           </div>
-          <div className="station_details">
-            {userInfo && <p>{`Posted by: ${userInfo.first_name}`}</p>}
-            {userInfo && <p>{`Posted at: ${createdAt.split('T')[0]}`}</p>}
+          <div className="station_details ReviewRows">
+            {userInfo && <div>{`${userInfo.first_name}`}</div>}
+            {userInfo && <div>{moment(createdAt).fromNow()}</div>}
+            
           </div>
           
         </div>

@@ -32,6 +32,11 @@
   padding-bottom: 1rem;
 }
 
+.GasRows {
+  display: flex;
+  flex-direction: column;
+  }
+
 .gas_price {
   display: flex;
   align-items: center;
