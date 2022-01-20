@@ -22,6 +22,7 @@ export default function GasPriceItem(props) {
 
 
   console.log("MyFirstName: ", userInfo)
+  console.log("gas station props", props);
 
   
   useEffect(() => {
@@ -62,7 +63,7 @@ export default function GasPriceItem(props) {
 
         <button
           className="button reviewbutton">
-          <Link to="/reviews">Details</Link>
+          <Link to={`/reviews/${stationId}`}>Details</Link>
         </button>
       </div>
     <Outlet />

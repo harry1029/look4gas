@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import axios from "axios";
 import "./Login.scss";
@@ -10,6 +11,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function WriteReview(props) {
   console.log ("Props:",props);
+  let { id } = useParams();
+  console.log("use params WRITE REVIEW", id);
+  const gasStation = props.gasStations.find(gasStation => gasStation.id == id);
 
   const [inputs, setInputs] = useState({ comment: "", user_rating: "", user_id: "", gas_station_id: ""});
 
@@ -18,7 +22,7 @@ export default function WriteReview(props) {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({ ...values, [name]: value , user_id: props.user.id, gas_station_id: props.gasStations.id}))
+    setInputs(values => ({ ...values, [name]: value , user_rating: 4, user_id: props.user.id, gas_station_id: gasStation.id}))
     console.log("line 22", inputs);
   }
 
@@ -35,7 +39,6 @@ export default function WriteReview(props) {
       })
       .catch((err) => console.log(err));
   };
-console.log (props.user);
   
 
   return (
@@ -46,10 +49,10 @@ console.log (props.user);
           <img className="gas_station_image GasImage" src='pioneer.png' />
         </div>
         <div className="station_details">
-          name: 123 GasStation <br></br>
-          rating: 5.0 <br></br>
-          address: 123 Test street <br></br>
-          station_phone: #123
+        Name: {gasStation.name} <br></br>
+            Rating: {gasStation.rating} <br></br>
+            Address: {gasStation.address}, Toronto, ON <br></br>
+            Phone: {gasStation.station_phone}
         </div>
         
       </div>

@@ -1,5 +1,7 @@
+import momemt from "moment";
+export default function ReviewItem (props) {
+  const { comment, user_rating, user_id, gas_station_id, created_at } = props;
 
-export default function ReviewItem () {
   return (
     <div className="main_block">
         <div className="details_block">
