@@ -1,4 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
+import { Rating } from '@mui/material';
+import { Star } from '@mui/icons-material';
 import moment from "moment";
 import "./Reviews.scss";
 import "./Button.scss";
@@ -28,16 +30,30 @@ export default function Reviews(props) {
 
   return (
     <>
-      <div className="main_block">
+      <div className="PriceBlock">
         <div className="details_block">
           <div>
-            <img className="gas_station_image" src='pioneer.png' />
+            <img className="gas_station_image" src='../../public/pioneer.png' alt="image"/>
           </div>
-          <div className="station_details">
-            Name: {gasStation && gasStation.name}<br></br>
-            Rating: {gasStation && gasStation.rating} <br></br>
-            Address: {gasStation && gasStation.address}, Toronto, ON <br></br>
-            Phone: {gasStation && gasStation.station_phone}
+          <div className="station_details StationDetail">
+            <div>
+              Name: {gasStation && gasStation.name}
+            </div>
+            <div>
+              <Rating
+                name="text-feedback"
+                value={gasStation.rating}
+                readOnly
+                precision={0.5}
+                emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
+              />
+            </div>
+            <div>
+              Address: {gasStation && gasStation.address}, Toronto, ON <br></br>
+            </div>
+            <div>
+              Phone: {gasStation && gasStation.station_phone}
+            </div>
           </div>
 
         </div>
@@ -101,7 +117,7 @@ export default function Reviews(props) {
 
       </div>
 
-      <ReviewItemList stationId={id} reviews={reviews}/>
+      <ReviewItemList stationId={id} reviews={reviews} />
       <Outlet />
     </>
 

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Avatar, AvatarGroup } from '@mui/material';
 import moment from "moment";
 import axios from "axios";
 
@@ -19,12 +20,12 @@ export default function ReviewItem (props) {
   }, []);
 
   return (
-    <div className="main_block">
+    <div className="ReviewItem">
         <div className="details_block">
           <div>
             <img className="gas_station_image" src='abc.png' alt="User Avatar" />
           </div>
-          <div className="station_details ReviewRows">
+          <div className="station_details StationDetail">
             {userInfo && <div>{`${userInfo.first_name}`}</div>}
             {userInfo && <div>{moment(createdAt).fromNow()}</div>}
             
