@@ -56,6 +56,7 @@ export default function Application(props) {
         <Navbar />
         <h1> Currently Logged in as: </h1>
         <ul> {formatName(state.currentUser)} </ul>
+        <ul></ul>
         <Routes>
           {/* Pass props to routes */}
             <Route path="/" element={<Home gasStations={state.gasStations} priceUpdates={state.priceUpdates}/>} />

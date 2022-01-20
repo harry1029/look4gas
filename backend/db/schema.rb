@@ -40,7 +40,8 @@ ActiveRecord::Schema.define(version: 2022_01_18_034637) do
   create_table "price_updates", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "gas_station_id"
-    t.datetime "time_ago", precision: 6
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["gas_station_id"], name: "index_price_updates_on_gas_station_id"
     t.index ["user_id"], name: "index_price_updates_on_user_id"
   end

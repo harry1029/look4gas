@@ -4,7 +4,7 @@ class CreatePriceUpdates < ActiveRecord::Migration[7.0]
       t.references :user, foreign_key: true
       t.references :gas_station, foreign_key: true
 
-      t.datetime :time_ago
+      t.timestamps
     end
   end
 end
