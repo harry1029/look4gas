@@ -60,7 +60,7 @@ export default function SubmitPrice(props) {
 
 
   return (
-    <div className="PriceMain WriteReview">
+    <div className=" PriceMain WriteReview ">
       <div className="form-group ReviewSubform">
         <div className="details_block Spacing">
           <div>
@@ -90,10 +90,10 @@ export default function SubmitPrice(props) {
         </div>
       </div>
       
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="PriceSubmit">
 
       
-      <label>Enter Regular Price:
+      <label className="PriceSubmit"><h4><strong>Regular Price:</strong></h4>
       <input 
         type="number" 
         name="regular_price" 
@@ -101,7 +101,7 @@ export default function SubmitPrice(props) {
         onChange={handleChange}
       />
       </label>
-      <label>Enter Ultra Price:
+      <label className="PriceSubmit"><h4><strong>Ultra Price:</strong></h4>
         <input 
           type="number" 
           name="ultra_price" 
@@ -109,7 +109,7 @@ export default function SubmitPrice(props) {
           onChange={handleChange}
         />
         </label>
-        <label>Enter Premium Price:
+        <label className="PriceSubmit"><h4><strong>Premium Price:</strong></h4>
       <input 
         type="number" 
         name="premium_price" 
@@ -117,7 +117,7 @@ export default function SubmitPrice(props) {
         onChange={handleChange}
       />
       </label>
-        <input type="submit" />
+        <input type="submit" className="button reviewbutton" />
     </form>
 
 
