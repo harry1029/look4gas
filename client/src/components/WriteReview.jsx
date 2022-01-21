@@ -38,6 +38,7 @@ export default function WriteReview(props) {
       .then((res) => {
         console.log(res.data);
         navigate(`/reviews/${gasStation.id}`);
+        window.location.reload();
       })
       .catch((err) => console.log(err));
   };
