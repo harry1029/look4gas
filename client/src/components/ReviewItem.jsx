@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Avatar, AvatarGroup } from '@mui/material';
 import moment from "moment";
 import axios from "axios";
+import { blueGrey, deepOrange, lightBlue } from "@mui/material/colors";
 
 
 export default function ReviewItem (props) {
@@ -10,7 +11,6 @@ export default function ReviewItem (props) {
   //{`Posted at: ${createdAt.split('T')[0]}`}
 
   const [userInfo, setUserInfo] = useState();
-
   useEffect(() => {
     axios.get(`http://localhost:3001/api/users/${userId}`)
     .then(response => {
@@ -23,7 +23,7 @@ export default function ReviewItem (props) {
     <div className="ReviewItem">
         <div className="details_block">
           <div>
-            <img className="gas_station_image" src='abc.png' alt="User Avatar" />
+          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: 56, height: 56, bgcolor: lightBlue[500] }} />
           </div>
           <div className="station_details StationDetail">
             {userInfo && <div>{`${userInfo.first_name}`}</div>}
