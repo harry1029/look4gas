@@ -22,7 +22,7 @@ export default function Register() {
 
     const url = "http://localhost:3001/api/users/";
     axios
-      .post(url, info)
+      .post(url, info, { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         navigate("/");

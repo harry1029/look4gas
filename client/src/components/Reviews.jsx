@@ -11,7 +11,7 @@ import { getPriceUpdate } from "../helpers/selectors";
 
 export default function Reviews(props) {
 
-  const { gasStations, priceUpdates, reviews } = props;
+  const { gasStations, priceUpdates, reviews, setState } = props;
 
   console.log("Review props", props);
   let { id } = useParams();

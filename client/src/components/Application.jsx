@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './Application.scss';
 import useApplicationData from '../hooks/useApplicationData';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // Using react-router
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -20,6 +22,8 @@ import SubmitPrice from "./SubmitPrice";
 
 
 export default function Application(props) {
+  
+
   console.log("application props", props);
 
   const {
@@ -32,6 +36,8 @@ export default function Application(props) {
 
   console.log("State Updates: ", state.priceUpdates)
 
+  
+
   function formatName(user) {
     return user.first_name + ' ' + user.last_name;
   }
@@ -41,7 +47,7 @@ export default function Application(props) {
   // const gasStationList = state.gasStations.map((station) => (<li key={station.id} > {station.name} {station.rating} {station.address} </li>));
 
   useEffect(() => {
-    // Try to get user from local storage, returns null of not found
+    // Try to get user from local storage, returns null if not found
     const storageUser = localStorage.getItem('user');
 
     if (storageUser) {
@@ -57,21 +63,21 @@ export default function Application(props) {
   return (
     <BrowserRouter>
       <div div className="Application" >
-        <Navbar />
+        <Navbar setState={setState}/>
         <h1> Currently Logged in as: </h1>
         <ul> {formatName(state.currentUser)} </ul>
         <ul></ul>
         <Routes>
           {/* Pass props to routes */}
-            <Route path="/" element={<Home gasStations={state.gasStations} priceUpdates={state.priceUpdates}/>} />
-            <Route path="login" element={<Login />} />
+            <Route path="/" element={<Home gasStations={state.gasStations} priceUpdates={state.priceUpdates} user={state.currentUser}/>} />
+            <Route path="login" element={<Login setState={setState} />} />
             <Route path="register" element={<Register />} />
             <Route path="*" element={<NoPage />} />
             <Route path="gas_price_item" element={<GasPriceItem />} />
             <Route path="gas_price_item_list" element={<GasPriceItemList />} />
-            <Route path="reviews/:id" element={<Reviews gasStations={state.gasStations} user={state.currentUser} priceUpdates={state.priceUpdates} reviews={state.reviews}/>} />
+            <Route path="reviews/:id" element={<Reviews gasStations={state.gasStations} user={state.currentUser} priceUpdates={state.priceUpdates} reviews={state.reviews} setState={setState}/>} />
             <Route path="reviews_item" element={<ReviewItem reviews={state.reviews} gasStations={state.gasStations} user={state.currentUser}/>} />
-            <Route path="write_review/:id" element={<WriteReview user={state.currentUser} gasStations={state.gasStations}/>} />
+            <Route path="write_review/:id" element={<WriteReview user={state.currentUser} gasStations={state.gasStations} setState={setState}/>} />
             <Route path="rating" element={<StationRating gasStations={state.gasStations} reviews={state.reviews}/>} />
             <Route path="submit_price/:id" element={<SubmitPrice gasStations={state.gasStations} user={state.currentUser} priceUpdates={state.priceUpdates} reviews={state.reviews}/>} />
 

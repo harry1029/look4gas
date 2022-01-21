@@ -12,6 +12,8 @@ import { getUser } from "../helpers/loginHelper";
 import { useNavigate } from "react-router-dom";
 
 export default function WriteReview(props) {
+  const { setState } = props;
+
   console.log ("Props:",props);
   let { id } = useParams();
   console.log("use params WRITE REVIEW", id);
@@ -36,9 +38,13 @@ export default function WriteReview(props) {
     axios
       .post(url, inputs)
       .then((res) => {
-        console.log(res.data);
-        navigate(`/reviews/${gasStation.id}`);
-        window.location.reload();
+        axios
+      .get(url, inputs)
+      .then((res) => {
+        console.log("RESULT", res.data)
+        setState(prev => ({ ...prev, reviews: res.data}));
+
+        navigate(`/reviews/${gasStation.id}`);})
       })
       .catch((err) => console.log(err));
   };

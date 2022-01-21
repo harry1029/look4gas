@@ -2,12 +2,14 @@ import { useState } from "react";
 import axios from "axios";
 import "./Login.scss";
 import "./Button.scss";
+import useApplicationData from "../hooks/useApplicationData";
 
 import { getUser } from "../helpers/loginHelper";
 
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login(props) {
+  const { setState } = props;
   const [user, setUser] = useState({ email: '', password: ''});
 
   const navigate = useNavigate();
@@ -35,9 +37,9 @@ export default function Login() {
           console.log("User does not exist!")
         } else {
           setUser(result);
-
           // User local storage to set key: user, with a user value if found
           localStorage.setItem("user", JSON.stringify(result));
+          setState(prev => ({ ...prev, loggedIn: true, currentUser: result}));
           navigate("/");
         }
       })
