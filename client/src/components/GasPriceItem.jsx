@@ -20,11 +20,9 @@ export default function GasPriceItem(props) {
 
   const [userInfo, setUserInfo] = useState();
 
+  const priceUpdate = getMostRecentPriceUpdate(priceUpdates, stationId);
 
   console.log("Updates: ", priceUpdates);
-  const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, stationId);
-
-  const priceUpdate = getMostRecentPriceUpdate(priceUpdates, stationId)
 
 
 
@@ -33,11 +31,17 @@ export default function GasPriceItem(props) {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+    axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
-        setUserInfo(response.data);
-        console.log(response.data)
-      });
+        console.log(response.data);
+        const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, stationId);
+        axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+        .then(response => {
+          setUserInfo(response.data);
+        })
+      })
+
+
   }, []);
 
   return (

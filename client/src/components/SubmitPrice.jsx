@@ -44,8 +44,6 @@ export default function SubmitPrice(props) {
       axios.post(`http://localhost:3001/api/price_updates`, {user_id: user.id, gas_station_id: gasStation.id}),
       axios.patch(`http://localhost:3001/api/gas_stations/${gasStation.id}`, inputs)
       
-
-
       // all is an array of ALL the requests
     ]).then((all) => {
       const [first, second] = all;

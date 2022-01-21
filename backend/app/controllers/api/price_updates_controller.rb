@@ -25,7 +25,7 @@ class Api::PriceUpdatesController < ApplicationController
   end
 
   def create
-    @price_updates = PriceUpdate.new(price_update_params)
+    @price_updates = PriceUpdate.new(price_updates_params)
 
     if @price_updates.save
         render :json => {
