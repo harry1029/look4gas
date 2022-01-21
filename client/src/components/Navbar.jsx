@@ -2,25 +2,24 @@ import { Outlet, Link } from "react-router-dom";
 import "./Navbar.scss";
 import "./Button.scss";
 import axios from "axios";
-import {Logout} from "../helpers/logoutHelper"
 import { useNavigate } from "react-router-dom";
-import useApplicationData from "../hooks/useApplicationData";
 
 const Navbar = (props) => {
-  const {setState} = props;
+  const { state, setState } = props;
   const navigate = useNavigate();
+  console.log("STATE", state.loggedIn);
 
-  const Logout = function() {
-  
+  const Logout = function () {
+
     axios.delete("http://localhost:3001/api/logout/", { withCredentials: true })
       .then(response => {
         navigate("/login");
       });
-      localStorage.removeItem("user");
-    setState(prev => ({ ...prev, loggedIn: false, currentUser: {}}));
+    localStorage.removeItem("user");
+    setState(prev => ({ ...prev, loggedIn: false, currentUser: {} }));
     return true;
   }
-  
+
   return (
     <>
       <nav className="Navbar">
@@ -35,24 +34,33 @@ const Navbar = (props) => {
 
 
         <div className="rightbutton">
-          <button
+          {!state.loggedIn && <button
             className="button">
             <Link to="/login">Login</Link>
-          </button>
+          </button>}
 
           <br></br>
 
-          <button
+          {!state.loggedIn && <button
             className="button">
             <Link to="/register">Register</Link>
-          </button>
+          </button>}
         </div>
 
         <div>
-          <button onClick={Logout}
+          {state.loggedIn && <button onClick={Logout}
             className="button">
             Logout
-          </button>
+          </button>}
+
+          <br></br>
+          <br></br>
+
+          {state.loggedIn &&
+            <div className="LoggedInUser">
+              <h3>Hi {state.currentUser.first_name}!
+              </h3>
+            </div>}
         </div>
 
       </nav>
