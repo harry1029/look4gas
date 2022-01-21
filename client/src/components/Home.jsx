@@ -5,9 +5,8 @@ export default function Home(props) {
   const { gasStations, priceUpdates } = props;
 
   return (
-    <h1>
-      Home Page
+    <div>
       <GasPriceItemList gasStations={gasStations} priceUpdates={priceUpdates}/>
-    </h1>
+    </div>
   );
 }

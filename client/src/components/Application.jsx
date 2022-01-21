@@ -63,10 +63,8 @@ export default function Application(props) {
   return (
     <BrowserRouter>
       <div div className="Application" >
-        <Navbar setState={setState}/>
-        <h1> Currently Logged in as: </h1>
-        <ul> {formatName(state.currentUser)} </ul>
-        <ul></ul>
+        <Navbar setState={setState} state={state}/>
+        
         <Routes>
           {/* Pass props to routes */}
             <Route path="/" element={<Home gasStations={state.gasStations} priceUpdates={state.priceUpdates} user={state.currentUser}/>} />
