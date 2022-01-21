@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { Rating } from '@mui/material';
 import { Star } from '@mui/icons-material';
@@ -8,7 +8,6 @@ import "./Navbar.scss";
 
 import axios from "axios";
 
-import { useEffect } from "react";
 
 import moment from 'moment';
 
@@ -24,8 +23,6 @@ export default function GasPriceItem(props) {
 
   console.log("Updates: ", priceUpdates);
 
-
-
   console.log("MyFirstName: ", userInfo)
   console.log("gas station props", props);
 
@@ -40,8 +37,6 @@ export default function GasPriceItem(props) {
           setUserInfo(response.data);
         })
       })
-
-
   }, []);
 
   return (

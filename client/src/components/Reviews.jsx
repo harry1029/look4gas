@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { Rating } from '@mui/material';
 import { Star } from '@mui/icons-material';
@@ -7,11 +8,16 @@ import "./Button.scss";
 import "./GasPriceItem.scss";
 import { useParams } from "react-router-dom";
 import ReviewItemList from "./ReviewItemList";
-import { getPriceUpdate } from "../helpers/selectors";
+
+import axios from "axios";
+
+import { getUserIdFromPriceUpdate, getPriceUpdate, getMostRecentPriceUpdate } from "../helpers/selectors";
 
 export default function Reviews(props) {
 
   const { gasStations, priceUpdates, reviews, setState } = props;
+
+  const [userInfo, setUserInfo] = useState();
 
   console.log("Review props", props);
   let { id } = useParams();
@@ -21,12 +27,26 @@ export default function Reviews(props) {
   console.log("props gas station", props.gasStations);
   console.log("found gas station", gasStation);
 
-
+  const priceUpdate = getMostRecentPriceUpdate(priceUpdates, id);
 
   const time = "2022-01-19 17:34:23.199108";
   const timeago = moment('Thu Oct 25 2018 17:30:03 GMT+0300').fromNow();
 
   console.log("time ago:", timeago);
+
+
+  useEffect(() => {
+    axios.get(`http://localhost:3001/api/users/`)
+      .then(response => {
+        console.log(response.data);
+        const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, id);
+        axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+        .then(response => {
+          setUserInfo(response.data);
+
+        })
+      })
+  }, []);
 
   return (
     <>
@@ -101,16 +121,22 @@ export default function Reviews(props) {
 
           <div className="PriceHeadings">
             <div className="StationPrice center">
-              User3 <br></br> <br></br>
-              2 hours ago
+            {!userInfo && <p>Loading...</p>}
+            {userInfo && <p>{userInfo.first_name}</p>} <br></br> <br></br>
+            {!priceUpdate && <p>---</p>}
+            {priceUpdate && <p>{moment(priceUpdate.created_at).fromNow()}</p>}
             </div>
             <div className="StationPrice center ">
-              User3 <br></br> <br></br>
-              2 hours ago
+            {!userInfo && <p>Loading...</p>}
+            {userInfo && <p>{userInfo.first_name}</p>} <br></br> <br></br>
+            {!priceUpdate && <p>---</p>}
+            {priceUpdate && <p>{moment(priceUpdate.created_at).fromNow()}</p>}
             </div>
             <div className="StationPrice center">
-              User3 <br></br> <br></br>
-              2 hours ago
+            {!userInfo && <p>Loading...</p>}
+            {userInfo && <p>{userInfo.first_name}</p>} <br></br>
+            {!priceUpdate && <p>---</p>}
+            {priceUpdate && <p>{moment(priceUpdate.created_at).fromNow()}</p>}
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ export function getPriceUpdate(jsonData, stationId) {
 
 export function getMostRecentPriceUpdate(jsonData, stationId) {
 
-  const allUpdates = jsonData.filter(update => (update.gas_station_id === stationId));
+  const allUpdates = jsonData.filter(update => (update.gas_station_id == stationId));
 
   if (!jsonData || jsonData.length === 0 || !allUpdates) {
     return null;
