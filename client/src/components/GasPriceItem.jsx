@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { Rating } from '@mui/material';
 import { Star } from '@mui/icons-material';
@@ -8,11 +8,10 @@ import "./Navbar.scss";
 
 import axios from "axios";
 
-import { useEffect } from "react";
 
 import moment from 'moment';
 
-import { getUserIdFromPriceUpdate, getPriceUpdate } from "../helpers/selectors";
+import { getUserIdFromPriceUpdate, getPriceUpdate, getMostRecentPriceUpdate } from "../helpers/selectors";
 
 export default function GasPriceItem(props) {
 
@@ -20,24 +19,24 @@ export default function GasPriceItem(props) {
 
   const [userInfo, setUserInfo] = useState();
 
+  const priceUpdate = getMostRecentPriceUpdate(priceUpdates, stationId);
 
   console.log("Updates: ", priceUpdates);
-  const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, stationId);
-
-  const priceUpdate = getPriceUpdate(priceUpdates, stationId)
-
-
 
   console.log("MyFirstName: ", userInfo)
   console.log("gas station props", props);
 
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+    axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
-        setUserInfo(response.data);
-        console.log(response.data)
-      });
+        console.log(response.data);
+        const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, stationId);
+        axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+        .then(response => {
+          setUserInfo(response.data);
+        })
+      })
   }, []);
 
   return (

@@ -23,4 +23,20 @@ class Api::PriceUpdatesController < ApplicationController
       time_difference: @time_difference
     }
   end
+
+  def create
+    @price_updates = PriceUpdate.new(price_updates_params)
+
+    if @price_updates.save
+        render :json => {
+        success: true,
+      }
+    else
+      render :json => {message: "Price Update not created"}
+    end
+  end
+
+  def price_updates_params
+    params.require(:price_update).permit(:user_id, :gas_station_id)
+  end
 end
