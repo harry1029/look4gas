@@ -2,9 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import "./Navbar.scss";
 import "./Button.scss";
 import axios from "axios";
-import {Logout} from "../helpers/logoutHelper"
 import { useNavigate } from "react-router-dom";
-import useApplicationData from "../hooks/useApplicationData";
 
 const Navbar = (props) => {
   const {setState} = props;
