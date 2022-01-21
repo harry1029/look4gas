@@ -19,34 +19,37 @@ export default function Reviews(props) {
 
   const [userInfo, setUserInfo] = useState();
 
-  console.log("Review props", props);
+  // console.log("Review props", props);
   let { id } = useParams();
-  console.log("use params", id);
+  // console.log("use params", id);
   const gasStation = props.gasStations.find(gasStation => gasStation.id == id);
 
-  console.log("props gas station", props.gasStations);
-  console.log("found gas station", gasStation);
+  // console.log("props gas station", props.gasStations);
+  // console.log("found gas station", gasStation);
 
   const priceUpdate = getMostRecentPriceUpdate(priceUpdates, id);
 
-  const time = "2022-01-19 17:34:23.199108";
-  const timeago = moment('Thu Oct 25 2018 17:30:03 GMT+0300').fromNow();
+  //const time = "2022-01-19 17:34:23.199108";
+  //const timeago = moment('Thu Oct 25 2018 17:30:03 GMT+0300').fromNow();
 
-  console.log("time ago:", timeago);
+  //console.log("time ago:", timeago);
 
-
+console.log({priceUpdate});
   useEffect(() => {
     axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
-        console.log(response.data);
+        console.log(" RESPONE DATA",response.data);
+        console.log({priceUpdates, id});
         const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, id);
+        console.log({priceSubmitUserId});
         axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
         .then(response => {
+          console.log("RESPONE LIONE 45", response);
           setUserInfo(response.data);
 
-        })
-      })
-  }, []);
+        }).catch((err) => console.log("CATCH ERROE", err));
+      }).catch((err) => console.log("CATCH ERROR 2", err));
+  }, [priceUpdates]);
 
   return (
     <>
