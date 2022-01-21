@@ -5,6 +5,7 @@ import { Star } from '@mui/icons-material';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import axios from "axios";
 import "./Login.scss";
+import "./SubmitPrice.scss"
 import "./Button.scss";
 import { getUser } from "../helpers/loginHelper";
 import { useNavigate } from "react-router-dom";
@@ -28,13 +29,13 @@ export default function SubmitPrice(props) {
 
 
   return (
-    <div className="WriteReview">
+    <div className="PriceMain WriteReview">
       <div className="form-group ReviewSubform">
         <div className="details_block Spacing">
           <div>
             <img className="gas_station_image GasImage" src='pioneer.png' alt="image" />
           </div>
-          <div className="station_details StationDetail">
+          <div className="PriceSubmit">
             <div>
               Name: {gasStation && gasStation.name}
             </div>
