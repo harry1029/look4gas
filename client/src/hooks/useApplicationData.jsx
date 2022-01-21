@@ -46,7 +46,7 @@ const useApplicationData = () => {
     Promise.all([
       axios.get('http://localhost:3001/api/provinces'),
       axios.get('http://localhost:3001/api/cities'),
-      axios.get('http://localhost:3001/api/gas_stations'),
+      axios.get('http://localhost:3001/api/gas_stations', {withCredentials: true}),
       axios.get('http://localhost:3001/api/reviews'),
       axios.get('http://localhost:3001/api/price_updates'),
       
@@ -57,7 +57,7 @@ const useApplicationData = () => {
       const [first, second, third, forth, fifth] = all;
 
       setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gasStations: third.data, reviews: forth.data, priceUpdates: fifth.data }));
-      console.log("State Updates: ", state.priceUpdates)
+      console.log("State Updates: ", state)
       console.log("Initialize!");
     })
 

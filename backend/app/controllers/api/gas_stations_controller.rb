@@ -2,6 +2,7 @@ class Api::GasStationsController < ApplicationController
 
   def index
     @gas_stations = GasStation.all
+    puts "session UserID" , session[:user_id]
     render json: @gas_stations
   end
 
