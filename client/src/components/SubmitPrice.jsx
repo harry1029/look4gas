@@ -10,10 +10,15 @@ import { getUser } from "../helpers/loginHelper";
 import { useNavigate } from "react-router-dom";
 
 export default function SubmitPrice(props) {
+
+  const { user } = props;
+
   let { id } = useParams();
   console.log("use params WRITE REVIEW", id);
   const gasStation = props.gasStations.find(gasStation => gasStation.id == id);
   const [inputs, setInputs] = useState({});
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -24,6 +29,34 @@ export default function SubmitPrice(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(inputs);
+
+    // const url = `http://localhost:3001/api/gas_stations/${gasStation.id}`;
+    // axios
+    //   .patch(url, inputs)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     navigate(`/reviews/${gasStation.id}`);
+    //     window.location.reload();
+    //   })
+    //   .catch((err) => console.log(err));
+
+    Promise.all([
+      axios.post(`http://localhost:3001/api/price_updates`, {user_id: user.id, gas_station_id: gasStation.id}),
+      axios.patch(`http://localhost:3001/api/gas_stations/${gasStation.id}`, inputs)
+      
+
+
+      // all is an array of ALL the requests
+    ]).then((all) => {
+      const [first, second] = all;
+
+      navigate(`/reviews/${gasStation.id}`);
+      window.location.reload();
+
+      // setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gasStations: third.data, reviews: forth.data, priceUpdates: fifth.data }));
+      // console.log("State Updates: ", state.priceUpdates)
+    })
+    .catch((err) => console.log(err));
   }
 
 
@@ -39,13 +72,13 @@ export default function SubmitPrice(props) {
               Name: {gasStation && gasStation.name}
             </div>
             <div>
-              <Rating
+            {gasStation && <Rating
                 name="text-feedback"
                 value={gasStation.rating}
                 readOnly
                 precision={0.5}
                 emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
-              />
+              />}
             </div>
             <div>
               Address: {gasStation && gasStation.address}, Toronto, ON <br></br>

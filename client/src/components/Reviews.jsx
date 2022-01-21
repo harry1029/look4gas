@@ -61,7 +61,7 @@ export default function Reviews(props) {
         <div className="details_link ">
           <button
             className="button reviewbutton">
-            <Link to="/submit_price">Submit Price</Link>
+            <Link to={`/submit_price/${id}`}>Submit Price</Link>
           </button>
 
           <br></br>

@@ -12,7 +12,7 @@ import { useEffect } from "react";
 
 import moment from 'moment';
 
-import { getUserIdFromPriceUpdate, getPriceUpdate } from "../helpers/selectors";
+import { getUserIdFromPriceUpdate, getPriceUpdate, getMostRecentPriceUpdate } from "../helpers/selectors";
 
 export default function GasPriceItem(props) {
 
@@ -24,7 +24,7 @@ export default function GasPriceItem(props) {
   console.log("Updates: ", priceUpdates);
   const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, stationId);
 
-  const priceUpdate = getPriceUpdate(priceUpdates, stationId)
+  const priceUpdate = getMostRecentPriceUpdate(priceUpdates, stationId)
 
 
 
