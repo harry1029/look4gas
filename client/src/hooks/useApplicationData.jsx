@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
+import { calculateRating } from "../helpers/ratingHelper";
+
 import dataReducer, {
   SET_USERS
 } from '../reducer/data_reducer';
@@ -55,6 +57,8 @@ const useApplicationData = () => {
       // all is an array of ALL the requests
     ]).then((all) => {
       const [first, second, third, forth, fifth] = all;
+
+      third.data.map(gasStation => gasStation.rating = calculateRating(gasStation, forth.data));
 
       setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gasStations: third.data, reviews: forth.data, priceUpdates: fifth.data }));
       console.log("State Updates: ", state)

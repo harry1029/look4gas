@@ -9,6 +9,8 @@ import "./GasPriceItem.scss";
 import { useParams } from "react-router-dom";
 import ReviewItemList from "./ReviewItemList";
 
+import { calculateRating } from "../helpers/ratingHelper";
+
 import axios from "axios";
 
 import { getUserIdFromPriceUpdate, getPriceUpdate, getMostRecentPriceUpdate } from "../helpers/selectors";
@@ -36,6 +38,7 @@ export default function Reviews(props) {
 
 console.log({priceUpdate});
   useEffect(() => {
+    gasStation.rating = calculateRating(gasStation, reviews)
     axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
         console.log(" RESPONE DATA",response.data);
@@ -49,7 +52,7 @@ console.log({priceUpdate});
 
         }).catch((err) => console.log("CATCH ERROE", err));
       }).catch((err) => console.log("CATCH ERROR 2", err));
-  }, [priceUpdates]);
+  }, [priceUpdates, reviews]);
 
   return (
     <>

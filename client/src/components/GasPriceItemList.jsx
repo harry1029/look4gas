@@ -3,7 +3,7 @@ import GasPriceItem from "./GasPriceItem";
 
 export default function GasPriceItemList(props) {
 
-  const { gasStations, priceUpdates } = props;
+  const { gasStations, priceUpdates, reviews } = props;
 
   const sortedGasStations = gasStations.sort((a, b) => {
     return a.regular_price - b.regular_price;
