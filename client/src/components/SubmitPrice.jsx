@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function SubmitPrice(props) {
 
-  const { user } = props;
+  const { user, setState , state } = props;
 
   let { id } = useParams();
   console.log("use params WRITE REVIEW", id);
@@ -41,6 +41,8 @@ export default function SubmitPrice(props) {
     //   })
     //   .catch((err) => console.log(err));
 
+
+
     Promise.all([
       axios.post(`http://localhost:3001/api/price_updates`, { user_id: user.id, gas_station_id: gasStation.id }),
       axios.patch(`http://localhost:3001/api/gas_stations/${gasStation.id}`, inputs)
@@ -49,10 +51,9 @@ export default function SubmitPrice(props) {
     ]).then((all) => {
       const [first, second] = all;
 
-      navigate(`/reviews/${gasStation.id}`);
+      // setState(prev => ({ ...prev, priceUpdates: first.data, gasStations: .data }));
+      navigate(`/`);
       window.location.reload();
-
-      // setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gasStations: third.data, reviews: forth.data, priceUpdates: fifth.data }));
       // console.log("State Updates: ", state.priceUpdates)
     })
       .catch((err) => console.log(err));

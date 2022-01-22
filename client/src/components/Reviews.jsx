@@ -30,6 +30,7 @@ export default function Reviews(props) {
   console.log({priceUpdate});
   gasStation.rating = calculateRating(gasStation, reviews)
   useEffect(() => {
+    gasStation.rating = calculateRating(gasStation, reviews)
     axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
         console.log(" RESPONE DATA",response.data);
