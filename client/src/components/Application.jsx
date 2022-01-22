@@ -36,13 +36,6 @@ export default function Application(props) {
 
   console.log("State Updates: ", state.priceUpdates)
 
-  
-
-  function formatName(user) {
-    return user.first_name + ' ' + user.last_name;
-  }
-
-
   // Display some dummy stations on screen for now
   // const gasStationList = state.gasStations.map((station) => (<li key={station.id} > {station.name} {station.rating} {station.address} </li>));
 
@@ -55,7 +48,6 @@ export default function Application(props) {
       // use JSON.parse to convert string to JSON
       const result = JSON.parse(storageUser)
       setState(prev => ({ ...prev, loggedIn: true, currentUser: result}));
-      console.log("IS LOGGED IN: ", state.loggedIn);
     }
 
   }, [])
@@ -67,7 +59,7 @@ export default function Application(props) {
         
         <Routes>
           {/* Pass props to routes */}
-            <Route path="/" element={<Home gasStations={state.gasStations} priceUpdates={state.priceUpdates} user={state.currentUser}/>} />
+            <Route path="/" element={<Home gasStations={state.gasStations} priceUpdates={state.priceUpdates} user={state.currentUser} reviews={state.reviews}/>} />
             <Route path="login" element={<Login setState={setState} />} />
             <Route path="register" element={<Register />} />
             <Route path="*" element={<NoPage />} />

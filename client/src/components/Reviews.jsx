@@ -9,6 +9,8 @@ import "./GasPriceItem.scss";
 import { useParams } from "react-router-dom";
 import ReviewItemList from "./ReviewItemList";
 
+import { calculateRating } from "../helpers/ratingHelper";
+
 import axios from "axios";
 
 import { getUserIdFromPriceUpdate, getPriceUpdate, getMostRecentPriceUpdate } from "../helpers/selectors";
@@ -25,7 +27,8 @@ export default function Reviews(props) {
   const priceUpdate = getMostRecentPriceUpdate(priceUpdates, id);
   console.log("STATE LINE 26", state);
 
-console.log({priceUpdate});
+  console.log({priceUpdate});
+  gasStation.rating = calculateRating(gasStation, reviews)
   useEffect(() => {
     axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
@@ -33,12 +36,31 @@ console.log({priceUpdate});
         console.log({priceUpdates, id});
         const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, id);
         console.log({priceSubmitUserId});
+<<<<<<< HEAD
         axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
         .then(response => {
           setUserInfo(response.data);
         }).catch((err) => console.log("Error", err));
       }).catch((err) => console.log("Error", err));
   }, [priceUpdates]);
+=======
+        if (priceSubmitUserId) {
+          axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+          .then(response => {
+            console.log("RESPONE LIONE 45", response);
+            setUserInfo(response.data);
+  
+          }).catch((err) => console.log("CATCH ERROR 1", err));
+        }
+        // axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+        // .then(response => {
+        //   console.log("RESPONE LIONE 45", response);
+        //   setUserInfo(response.data);
+
+        // }).catch((err) => console.log("CATCH ERROE", err));
+      }).catch((err) => console.log("CATCH ERROR 2", err));
+  }, [priceUpdates, reviews]);
+>>>>>>> master
 
   return (
     <>
