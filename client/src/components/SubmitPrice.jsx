@@ -49,12 +49,22 @@ export default function SubmitPrice(props) {
 
       // all is an array of ALL the requests
     ]).then((all) => {
-      const [first, second] = all;
 
       // setState(prev => ({ ...prev, priceUpdates: first.data, gasStations: .data }));
-      navigate(`/`);
-      window.location.reload();
+      // navigate(`/reviews/${gasStation.id}`);
+      // window.location.reload();
       // console.log("State Updates: ", state.priceUpdates)
+
+      Promise.all([
+        axios.get(`http://localhost:3001/api/price_updates`),
+        axios.get(`http://localhost:3001/api/gas_stations`)
+      ]).then((all) => {
+
+        const [first, second] = all;
+
+        setState(prev => ({ ...prev, priceUpdates: first.data, gasStations: second.data }));
+        navigate(`/reviews/${gasStation.id}`);
+      })
     })
       .catch((err) => console.log(err));
   }
