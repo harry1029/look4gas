@@ -12,21 +12,21 @@ import { getUser } from "../helpers/loginHelper";
 import { useNavigate } from "react-router-dom";
 
 export default function WriteReview(props) {
-  const { setState } = props;
+  const { setState, user, gasStations } = props;
 
-  console.log ("Props:",props);
+  console.log("Props:", props);
   let { id } = useParams();
   console.log("use params WRITE REVIEW", id);
   const gasStation = props.gasStations.find(gasStation => gasStation.id == id);
 
-  const [inputs, setInputs] = useState({ comment: "", user_rating: "", user_id: "", gas_station_id: ""});
+  const [inputs, setInputs] = useState({ comment: "", user_rating: "", user_id: "", gas_station_id: "" });
 
   const navigate = useNavigate();
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({ ...values, [name]: value , user_rating: 4, user_id: props.user.id, gas_station_id: gasStation.id}))
+    setInputs(values => ({ ...values, [name]: value, user_id: props.user.id, gas_station_id: gasStation.id }))
     console.log("line 22", inputs);
   }
 
@@ -39,25 +39,34 @@ export default function WriteReview(props) {
       .post(url, inputs)
       .then((res) => {
         axios
-      .get(url, inputs)
-      .then((res) => {
-        console.log("RESULT", res.data)
-        setState(prev => ({ ...prev, reviews: res.data}));
+          .get(url, inputs)
+          .then((res) => {
+            console.log("RESULT", res.data)
+            setState(prev => ({ ...prev, reviews: res.data }));
 
-        navigate(`/reviews/${gasStation.id}`);})
+            navigate(`/reviews/${gasStation.id}`);
+          })
       })
       .catch((err) => console.log(err));
   };
-  
+
 
   return (
     <div className="WriteReview">
       <div className="form-group ReviewSubform">
+<<<<<<< HEAD
       <div className="details_block Spacing">
         <div>
           <img className="gas_station_image GasImage" src='../pioneer.png' alt="image" />
         </div>
         <div className="station_details StationDetail">
+=======
+        <div className="details_block Spacing">
+          <div>
+            <img className="gas_station_image GasImage" src='pioneer.png' alt="image" />
+          </div>
+          <div className="station_details StationDetail">
+>>>>>>> master
             <div>
               Name: {gasStation && gasStation.name}
             </div>
@@ -77,16 +86,23 @@ export default function WriteReview(props) {
               Phone: {gasStation && gasStation.station_phone}
             </div>
           </div>
-        
-      </div>
+
+        </div>
 
         <form onSubmit={handleSubmit}>
           <div className="WriteReviewLabel">
             <label>
               Write a short review
             </label>
-            
+            <Rating
+              name="user_rating"
+              value={inputs.user_rating}
+              precision={0.5}
+              defaultValue={2.5}
+              onChange={handleChange}
+            />
           </div>
+
           <div>
             <TextareaAutosize
               name="comment"

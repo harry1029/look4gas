@@ -4,6 +4,10 @@ export function getUserIdFromPriceUpdate(jsonData, stationId) {
 
   const recentUpdate = getMostRecentPriceUpdate(jsonData, stationId);
 
+  if (!recentUpdate) {
+    return undefined;
+  }
+
   return recentUpdate.user_id
 }
 
