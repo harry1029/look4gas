@@ -36,21 +36,29 @@ export default function Reviews(props) {
 
   //console.log("time ago:", timeago);
 
-console.log({priceUpdate});
+  console.log({priceUpdate});
+  gasStation.rating = calculateRating(gasStation, reviews)
   useEffect(() => {
-    gasStation.rating = calculateRating(gasStation, reviews)
     axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
         console.log(" RESPONE DATA",response.data);
         console.log({priceUpdates, id});
         const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, id);
         console.log({priceSubmitUserId});
-        axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
-        .then(response => {
-          console.log("RESPONE LIONE 45", response);
-          setUserInfo(response.data);
+        if (priceSubmitUserId) {
+          axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+          .then(response => {
+            console.log("RESPONE LIONE 45", response);
+            setUserInfo(response.data);
+  
+          }).catch((err) => console.log("CATCH ERROR 1", err));
+        }
+        // axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+        // .then(response => {
+        //   console.log("RESPONE LIONE 45", response);
+        //   setUserInfo(response.data);
 
-        }).catch((err) => console.log("CATCH ERROE", err));
+        // }).catch((err) => console.log("CATCH ERROE", err));
       }).catch((err) => console.log("CATCH ERROR 2", err));
   }, [priceUpdates, reviews]);
 

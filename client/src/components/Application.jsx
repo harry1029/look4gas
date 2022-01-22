@@ -48,7 +48,6 @@ export default function Application(props) {
       // use JSON.parse to convert string to JSON
       const result = JSON.parse(storageUser)
       setState(prev => ({ ...prev, loggedIn: true, currentUser: result}));
-      console.log("IS LOGGED IN: ", state.loggedIn);
     }
 
   }, [])
