@@ -1,13 +1,29 @@
-.WriteReview {
+.ReviewMainBlock {
   display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  background-color: #CEE2F3;
+  width: 40rem;
+  height: 10rem;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #54a0ff;
+  font-size: 1rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+.WriteReview {
   flex-direction: column;
   margin-top: 2rem;
   background-color: #CEE2F3;
   width: 40rem;
-  height: 30rem;
-  justify-content: space-evenly;
-  margin-left: 30rem;
-  margin-right: 30rem;
+  height: 30.5rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2rem;
   border-radius: 1rem;
   border-width: 3px;
@@ -25,8 +41,8 @@
   width: 40rem;
   height: 15rem;
   justify-content: space-evenly;
-  margin-left: 27.5rem;
-  margin-right: 30rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 2rem;
   border-radius: 1rem;
   border-width: 3px;
@@ -36,6 +52,18 @@
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.ReviewComment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 0.5rem;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #54a0ff;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
 
 .ReviewRows {
 display: flex;
@@ -109,7 +137,8 @@ padding-top: 1.2rem;
 
 .center {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -121,8 +150,8 @@ padding-top: 1.2rem;
   width: 40rem;
   height: 12rem;
   justify-content: space-evenly;
-  margin-left: 30rem;
-  margin-right: 30rem;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 1rem;
   border-width: 3px;
   border-style: solid;
@@ -136,5 +165,13 @@ padding-top: 1.2rem;
   flex-grow: 2;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.ReviewDetail {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

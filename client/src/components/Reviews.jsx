@@ -17,24 +17,15 @@ import { getUserIdFromPriceUpdate, getPriceUpdate, getMostRecentPriceUpdate } fr
 
 export default function Reviews(props) {
 
-  const { gasStations, priceUpdates, reviews, setState } = props;
+  const { gasStations, priceUpdates, reviews, state, setState } = props;
 
   const [userInfo, setUserInfo] = useState();
 
-  // console.log("Review props", props);
   let { id } = useParams();
-  // console.log("use params", id);
   const gasStation = props.gasStations.find(gasStation => gasStation.id == id);
 
-  // console.log("props gas station", props.gasStations);
-  // console.log("found gas station", gasStation);
-
   const priceUpdate = getMostRecentPriceUpdate(priceUpdates, id);
-
-  //const time = "2022-01-19 17:34:23.199108";
-  //const timeago = moment('Thu Oct 25 2018 17:30:03 GMT+0300').fromNow();
-
-  //console.log("time ago:", timeago);
+  console.log("STATE LINE 26", state);
 
   console.log({priceUpdate});
   gasStation.rating = calculateRating(gasStation, reviews)
@@ -45,29 +36,19 @@ export default function Reviews(props) {
         console.log({priceUpdates, id});
         const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, id);
         console.log({priceSubmitUserId});
-        if (priceSubmitUserId) {
-          axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
-          .then(response => {
-            console.log("RESPONE LIONE 45", response);
-            setUserInfo(response.data);
-  
-          }).catch((err) => console.log("CATCH ERROR 1", err));
-        }
-        // axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
-        // .then(response => {
-        //   console.log("RESPONE LIONE 45", response);
-        //   setUserInfo(response.data);
-
-        // }).catch((err) => console.log("CATCH ERROE", err));
-      }).catch((err) => console.log("CATCH ERROR 2", err));
-  }, [priceUpdates, reviews]);
+        axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
+        .then(response => {
+          setUserInfo(response.data);
+        }).catch((err) => console.log("Error", err));
+      }).catch((err) => console.log("Error", err));
+  }, [priceUpdates]);
 
   return (
     <>
       <div className="PriceBlock">
         <div className="details_block">
           <div>
-            <img className="gas_station_image" src='../../public/pioneer.png' alt="image"/>
+            <img className="gas_station_image" src='../pioneer.png' alt="image"/>
           </div>
           <div className="station_details StationDetail">
             <div>
@@ -92,7 +73,7 @@ export default function Reviews(props) {
 
         </div>
 
-        <div className="details_link ">
+        {state.loggedIn && <div className="details_link ">
           <button
             className="button reviewbutton">
             <Link to={`/submit_price/${id}`}>Submit Price</Link>
@@ -104,7 +85,7 @@ export default function Reviews(props) {
             className="button reviewbutton">
             <Link to={`/write_review/${id}`}>Write Review</Link>
           </button>
-        </div>
+        </div>}
 
       </div>
 
@@ -134,21 +115,21 @@ export default function Reviews(props) {
           </div>
 
           <div className="PriceHeadings">
-            <div className="StationPrice center">
+            <div className="StationPrice center ">
             {!userInfo && <p>Loading...</p>}
-            {userInfo && <p>{userInfo.first_name}</p>} <br></br> <br></br>
+            {userInfo && <p>{userInfo.first_name}</p>}
             {!priceUpdate && <p>---</p>}
             {priceUpdate && <p>{moment(priceUpdate.created_at).fromNow()}</p>}
             </div>
             <div className="StationPrice center ">
             {!userInfo && <p>Loading...</p>}
-            {userInfo && <p>{userInfo.first_name}</p>} <br></br> <br></br>
+            {userInfo && <p>{userInfo.first_name}</p>}
             {!priceUpdate && <p>---</p>}
             {priceUpdate && <p>{moment(priceUpdate.created_at).fromNow()}</p>}
             </div>
             <div className="StationPrice center">
             {!userInfo && <p>Loading...</p>}
-            {userInfo && <p>{userInfo.first_name}</p>} <br></br>
+            {userInfo && <p>{userInfo.first_name}</p>}
             {!priceUpdate && <p>---</p>}
             {priceUpdate && <p>{moment(priceUpdate.created_at).fromNow()}</p>}
             </div>

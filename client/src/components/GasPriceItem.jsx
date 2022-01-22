@@ -69,11 +69,12 @@ export default function GasPriceItem(props) {
 
         <div className="gas_price StationDetail">
           <div>
-            regular_price: {regular}
+            <h5><strong>Regular Price: {regular}</strong></h5>
           </div>
+
           <div>
-            {!userInfo && <p>Loading...</p>}
-            {userInfo && <p>submitted by: {userInfo.first_name}</p>}
+            {!userInfo && "Loading..."}
+            {userInfo && `Submitted by: ${userInfo.first_name}`}
           </div>
           <div>
             {!priceUpdate && <p>---</p>}
@@ -82,10 +83,6 @@ export default function GasPriceItem(props) {
         </div>
       </div>
       <div className="further_link ">
-        <button
-          className="button reviewbutton">
-          <Link to={`/submit_price/${stationId}`}>Submit Price</Link>
-        </button>
         <button
           className="button reviewbutton">
           <Link to={`/reviews/${stationId}`}>Details</Link>

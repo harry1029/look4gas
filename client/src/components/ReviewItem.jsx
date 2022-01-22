@@ -20,12 +20,12 @@ export default function ReviewItem (props) {
   }, []);
 
   return (
-    <div className="ReviewItem">
+    <div className="ReviewMainBlock">
         <div className="details_block">
           <div>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: 56, height: 56, bgcolor: lightBlue[500] }} />
+          {userInfo && <Avatar alt={`${userInfo.first_name}`} src="/static/images/avatar/1.jpg" sx={{ width: 56, height: 56, bgcolor: lightBlue[500] }} />}
           </div>
-          <div className="station_details StationDetail">
+          <div className=" ReviewDetail">
             {userInfo && <div>{`${userInfo.first_name}`}</div>}
             {userInfo && <div>{moment(createdAt).fromNow()}</div>}
             
@@ -33,7 +33,7 @@ export default function ReviewItem (props) {
           
         </div>
 
-        <div className="details_link ">
+        <div className="ReviewComment ">
           {comment}
         </div>
 

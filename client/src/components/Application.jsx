@@ -65,7 +65,7 @@ export default function Application(props) {
             <Route path="*" element={<NoPage />} />
             <Route path="gas_price_item" element={<GasPriceItem />} />
             <Route path="gas_price_item_list" element={<GasPriceItemList />} />
-            <Route path="reviews/:id" element={<Reviews gasStations={state.gasStations} user={state.currentUser} priceUpdates={state.priceUpdates} reviews={state.reviews} setState={setState}/>} />
+            <Route path="reviews/:id" element={<Reviews gasStations={state.gasStations} state={state} priceUpdates={state.priceUpdates} reviews={state.reviews} setState={setState}/>} />
             <Route path="reviews_item" element={<ReviewItem reviews={state.reviews} gasStations={state.gasStations} user={state.currentUser}/>} />
             <Route path="write_review/:id" element={<WriteReview user={state.currentUser} gasStations={state.gasStations} setState={setState}/>} />
             <Route path="rating" element={<StationRating gasStations={state.gasStations} reviews={state.reviews}/>} />

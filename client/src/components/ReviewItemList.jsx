@@ -30,8 +30,8 @@ export default function ReviewItemList(props) {
 )
 
   return (
-    <ul>
+    <div>
       {parsedReviewItem}
-    </ul>
+    </div>
   );
 }
