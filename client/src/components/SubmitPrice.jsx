@@ -24,7 +24,7 @@ export default function SubmitPrice(props) {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
+    setInputs(values => ({ ...values, [name]: value }))
   }
 
   const handleSubmit = (event) => {
@@ -42,9 +42,9 @@ export default function SubmitPrice(props) {
     //   .catch((err) => console.log(err));
 
     Promise.all([
-      axios.post(`http://localhost:3001/api/price_updates`, {user_id: user.id, gas_station_id: gasStation.id}),
+      axios.post(`http://localhost:3001/api/price_updates`, { user_id: user.id, gas_station_id: gasStation.id }),
       axios.patch(`http://localhost:3001/api/gas_stations/${gasStation.id}`, inputs)
-      
+
       // all is an array of ALL the requests
     ]).then((all) => {
       const [first, second] = all;
@@ -55,23 +55,22 @@ export default function SubmitPrice(props) {
       // setState(prev => ({ ...prev, provinces: first.data, cities: second.data, gasStations: third.data, reviews: forth.data, priceUpdates: fifth.data }));
       // console.log("State Updates: ", state.priceUpdates)
     })
-    .catch((err) => console.log(err));
+      .catch((err) => console.log(err));
   }
 
 
   return (
-    <div className=" PriceMain WriteReview ">
-      <div className="form-group ReviewSubform">
-        <div className="details_block Spacing">
+    <div className=" PriceMain ">
+        <div className="details_block StationBorder ">
           <div>
-            <img className="gas_station_image GasImage" src='pioneer.png' alt="image" />
+            <img className="gas_station_image GasImage" src='../pioneer.png' alt="image" />
           </div>
           <div className="PriceSubmit">
-            <div>
+            <div PriceSubmit>
               Name: {gasStation && gasStation.name}
             </div>
-            <div>
-            {gasStation && <Rating
+            <div PriceSubmit>
+              {gasStation && <Rating
                 name="text-feedback"
                 value={gasStation.rating}
                 readOnly
@@ -79,48 +78,55 @@ export default function SubmitPrice(props) {
                 emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
               />}
             </div>
-            <div>
+            <div PriceSubmit>
               Address: {gasStation && gasStation.address}, Toronto, ON <br></br>
             </div>
-            <div>
+            <div PriceSubmit>
               Phone: {gasStation && gasStation.station_phone}
             </div>
           </div>
-
         </div>
+
+      <div className=" ">
+        <form onSubmit={handleSubmit} className="PriceFields ReviewSubform ">
+          <div className="PriceFields">
+            <label className="VerticalAlign"><h4><strong>Regular Price:</strong></h4>
+              <input
+                type="number"
+                name="regular_price"
+                value={inputs.regular_price || ""}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+
+          <div className="PriceFields">
+            <label className="VerticalAlign"><h4><strong>Ultra Price:</strong></h4>
+              <input
+                type="number"
+                name="ultra_price"
+                value={inputs.ultra_price || ""}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+
+          <div className="PriceFields">
+            <label className="VerticalAlign"><h4><strong>Premium Price:</strong></h4>
+              <input
+                type="number"
+                name="premium_price"
+                value={inputs.premium_price || ""}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+
+          <div className="PriceFields">
+            <input type="submit" className="button reviewbutton" />
+          </div>
+        </form>
       </div>
-      
-    <form onSubmit={handleSubmit} className="PriceSubmit">
-
-      
-      <label className="PriceSubmit"><h4><strong>Regular Price:</strong></h4>
-      <input 
-        type="number" 
-        name="regular_price" 
-        value={inputs.regular_price || ""} 
-        onChange={handleChange}
-      />
-      </label>
-      <label className="PriceSubmit"><h4><strong>Ultra Price:</strong></h4>
-        <input 
-          type="number" 
-          name="ultra_price" 
-          value={inputs.ultra_price || ""} 
-          onChange={handleChange}
-        />
-        </label>
-        <label className="PriceSubmit"><h4><strong>Premium Price:</strong></h4>
-      <input 
-        type="number" 
-        name="premium_price" 
-        value={inputs.premium_price || ""} 
-        onChange={handleChange}
-      />
-      </label>
-        <input type="submit" className="button reviewbutton" />
-    </form>
-
-
     </div>
   );
 }

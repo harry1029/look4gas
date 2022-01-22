@@ -55,7 +55,7 @@ export default function WriteReview(props) {
       <div className="form-group ReviewSubform">
       <div className="details_block Spacing">
         <div>
-          <img className="gas_station_image GasImage" src='pioneer.png' alt="image" />
+          <img className="gas_station_image GasImage" src='../pioneer.png' alt="image" />
         </div>
         <div className="station_details StationDetail">
             <div>
