@@ -32,8 +32,8 @@ export default function Reviews(props) {
   console.log({priceUpdate});
   useEffect(() => {
     //setGasStation(prev => ({ ...prev, rating: calculateRating(gasStation, reviews)}))
-    gasStation = props.gasStations.find(gasStation => gasStation.id == id);
-    gasStation.rating = calculateRating(gasStation, reviews)
+    // gasStation = props.gasStations.find(gasStation => gasStation.id == id);
+    // gasStation.rating = calculateRating(gasStation, reviews)
     axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
         console.log(" RESPONE DATA",response.data);
@@ -45,6 +45,13 @@ export default function Reviews(props) {
           setUserInfo(response.data);
         }).catch((err) => console.log("Error", err));
       }).catch((err) => console.log("Error", err));
+
+    axios.get(`http://localhost:3001/api/gas_stations/`)
+      .then(gasStations => {
+        gasStation = gasStations.find(gasStation => gasStation.id == id);
+        gasStation.rating = calculateRating(gasStation, reviews)
+      })
+      .catch((err) => console.log("Error", err));
 
   }, [priceUpdates, reviews]);
 

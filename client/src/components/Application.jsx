@@ -19,6 +19,7 @@ import WriteReview from "./WriteReview";
 import ReviewItem from "./ReviewItem";
 import StationRating from "./Rating";
 import SubmitPrice from "./SubmitPrice";
+import GoogleMapComponent from "./GoogleMapComponent";
 
 
 export default function Application(props) {
@@ -70,6 +71,7 @@ export default function Application(props) {
             <Route path="write_review/:id" element={<WriteReview user={state.currentUser} gasStations={state.gasStations} setState={setState}/>} />
             <Route path="rating" element={<StationRating gasStations={state.gasStations} reviews={state.reviews}/>} />
             <Route path="submit_price/:id" element={<SubmitPrice gasStations={state.gasStations} user={state.currentUser} priceUpdates={state.priceUpdates} reviews={state.reviews} state={state} setState={setState}/>} />
+            <Route path="google_map" element={<GoogleMapComponent />} />
 
 
         </Routes>
