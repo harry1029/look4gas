@@ -8,12 +8,14 @@
 
 # Generate some fake data with 'faker'
 require('faker')
+require('json')
+
+toronto_records = JSON.parse(File.read('./db/data/stations_toronto.json'))
+toronto_results = toronto_records["results"]
 
 3.times do
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Internet.password)
 end
-
-
 
 Province.create(name: 'Ontario')
 Province.create(name: 'Quebec')
@@ -22,10 +24,23 @@ City.create(name: 'Toronto', province_id: 1)
 City.create(name: 'Montreal', province_id: 2)
 
 # Gas station dummies
-GasStation.create(name: "123 GasStation", rating: 5.0, address: "123 Test street", city_id: 1, station_phone: '#123', regular_price: 10, ultra_price: 20, premium_price: 30)
-GasStation.create(name: "456 GasStation", rating: 4.0, address: "456 Test street", city_id: 1, station_phone: '#456', regular_price: 40, ultra_price: 50, premium_price: 60)
-GasStation.create(name: "789 GasStation", rating: 3.0, address: "789 Test street", city_id: 2, station_phone: '#789', regular_price: 70, ultra_price: 80, premium_price: 90)
+GasStation.create(name: "123 GasStation", rating: 5.0, address: "123 Test street", city_id: 1, station_phone: Faker::PhoneNumber.phone_number, regular_price: 10, ultra_price: 20, premium_price: 30)
 GasStation.create(name: "BrandNew GasStation", address: "BrandNew Test street", city_id: 2)
+
+# Use the json fetched from google places api to populate gas stations as dummy variables
+toronto_results.each do |result|
+  GasStation.create(name: result["name"], 
+                    rating: 0, 
+                    address: result["formatted_address"], 
+                    city_id: 1, 
+                    station_phone: Faker::PhoneNumber.phone_number, 
+                    regular_price: Faker::Number.between(from: 80.0, to: 100.0).round(2), 
+                    ultra_price: Faker::Number.between(from: 100.0, to: 130.0).round(2), 
+                    premium_price: Faker::Number.between(from: 130.0, to: 150.0).round(2), 
+                    lat: result["geometry"]["location"]["lat"],
+                    lng: result["geometry"]["location"]["lng"]
+                  )
+end
 
 # Reviews dummies
 Review.create(comment: 'I am review #1', user_rating: 3.2, user_id: 1, gas_station_id: 1)

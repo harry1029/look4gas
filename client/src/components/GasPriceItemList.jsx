@@ -25,10 +25,11 @@ export default function GasPriceItemList(props) {
     >
   </GasPriceItem>
 )
+  const topFiveGasStations = parsedGasPriceItem.slice(0, 5);
 
   return (
     <ul>
-      {parsedGasPriceItem}
+      {topFiveGasStations}
     </ul>
   );
 }

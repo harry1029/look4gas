@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2022_01_18_034637) do
     t.decimal "regular_price"
     t.decimal "ultra_price"
     t.decimal "premium_price"
+    t.decimal "lat"
+    t.decimal "lng"
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

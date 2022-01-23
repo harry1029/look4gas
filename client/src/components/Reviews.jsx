@@ -22,7 +22,7 @@ export default function Reviews(props) {
   const [userInfo, setUserInfo] = useState();
 
   let { id } = useParams();
-  const gasStation = props.gasStations.find(gasStation => gasStation.id == id);
+  let gasStation = props.gasStations.find(gasStation => gasStation.id == id);
 
   // const [gasStation, setGasStation] = useState(props.gasStations.find(gasStation => gasStation.id == id))
 
@@ -30,9 +30,10 @@ export default function Reviews(props) {
   console.log("STATE LINE 26", state);
 
   console.log({priceUpdate});
-  // gasStation.rating = calculateRating(gasStation, reviews)
   useEffect(() => {
-    // setGasStation(prev => ({ ...prev, rating: calculateRating(gasStation, reviews)}))
+    //setGasStation(prev => ({ ...prev, rating: calculateRating(gasStation, reviews)}))
+    gasStation = props.gasStations.find(gasStation => gasStation.id == id);
+    gasStation.rating = calculateRating(gasStation, reviews)
     axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
         console.log(" RESPONE DATA",response.data);
@@ -45,7 +46,7 @@ export default function Reviews(props) {
         }).catch((err) => console.log("Error", err));
       }).catch((err) => console.log("Error", err));
 
-  }, [priceUpdates, gasStation.rating]);
+  }, [priceUpdates, reviews]);
 
   return (
     <>
