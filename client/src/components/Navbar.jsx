@@ -24,7 +24,7 @@ const Navbar = (props) => {
     <>
       <nav className="Navbar">
         <div>
-          <img className="Image" src='gas_logo.png' />
+          <img className="Image" src='gas_logo.png' alt="logo" />
         </div>
 
         <div className="Logo">

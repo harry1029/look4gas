@@ -43,7 +43,7 @@ export default function GasPriceItem(props) {
     <div className="main_block">
       <div className="details_block">
         <div>
-          <img className="gas_station_image" src='pioneer.png' />
+          <img className="gas_station_image" src={`../images/${stationId}.png`} alt="logo" />
         </div>
         <div className="station_details StationDetail">
           <div>

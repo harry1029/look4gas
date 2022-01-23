@@ -64,7 +64,7 @@ export default function SubmitPrice(props) {
     <div className=" PriceMain ">
         <div className="details_block StationBorder ">
           <div>
-            <img className="gas_station_image GasImage" src='../pioneer.png' alt="image" />
+            <img className="gas_station_image GasImage" src={`../images/${gasStation && gasStation.id}.png`} alt="image" />
           </div>
           <div className="PriceSubmit">
             <div PriceSubmit>

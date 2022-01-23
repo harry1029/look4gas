@@ -25,12 +25,12 @@ export default function Reviews(props) {
   const gasStation = props.gasStations.find(gasStation => gasStation.id == id);
 
   const priceUpdate = getMostRecentPriceUpdate(priceUpdates, id);
-  console.log("STATE LINE 26", state);
+  console.log("STATE LINE 26", gasStation);
 
   console.log({priceUpdate});
-  gasStation.rating = calculateRating(gasStation, reviews)
+   gasStation.rating = calculateRating(gasStation, reviews)
   useEffect(() => {
-    gasStation.rating = calculateRating(gasStation, reviews)
+     gasStation.rating = calculateRating(gasStation, reviews)
     axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
         console.log(" RESPONE DATA",response.data);
@@ -49,7 +49,7 @@ export default function Reviews(props) {
       <div className="PriceBlock">
         <div className="details_block">
           <div>
-            <img className="gas_station_image" src='../pioneer.png' alt="image"/>
+            <img className="gas_station_image" src={`../images/${gasStation && gasStation.id}.png`} alt="logo"/>
           </div>
           <div className="station_details StationDetail">
             <div>
