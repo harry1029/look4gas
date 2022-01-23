@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 
 // import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
@@ -42,6 +43,12 @@ export default function GoogleMapComponent(props) {
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
+  }, []);
+
+  // Set up a panTo function used to zoom to the location given lat and lng
+  const panTo = React.useCallback(({lat, lng}) => {
+    mapRef.current.panTo({lat, lng});
+    mapRef.current.setZoom(16);
   }, []);
 
 
@@ -93,7 +100,7 @@ export default function GoogleMapComponent(props) {
     // />
     <div>
 
-      <Search />
+      <Search panTo={panTo}/>
 
 
       <GoogleMap
@@ -107,7 +114,7 @@ export default function GoogleMapComponent(props) {
 
         {selected ? (
           <InfoWindow
-            position={{ lat: selected.lat, lng:selected.lng }}
+            position={{ lat: selected.lat, lng: selected.lng }}
             onCloseClick={() => {
               setSelected(null);
             }}
@@ -116,11 +123,59 @@ export default function GoogleMapComponent(props) {
               hello
             </div>
           </InfoWindow>
-        ) : null }
+        ) : null}
 
 
       </GoogleMap>
 
     </div>
   );
+}
+
+function Search({panTo}) {
+  // 
+  const { ready, value, suggestions: { status, data }, setValue, clearSuggestions } = usePlacesAutocomplete({
+    requestOptions: {
+      location: { lat: () => 43.653225, lng: () => -79.383186 },
+      // Radius in kilometers
+      radius: 200 * 1000
+    }
+  });
+
+  return (
+    <div className="search">
+      <Combobox
+        onSelect={async (address) => {
+          setValue=(address, false);
+          clearSuggestions()
+          try {
+            // Geocode the address from search bar
+            const results = await getGeocode({address});
+            // Get the lat and lng from the search result
+            const {lat, lng} = await getLatLng(results[0]);
+            panTo({lat, lng});
+            console.log(results[0]);
+          } catch(error) {
+            console.log("error!")
+          }
+        }}
+      >
+
+        <ComboboxInput value={value} onChange={(e) => {
+          setValue(e.target.value);
+        }}
+          disabled={!ready}
+          placeholder="Enter an address"
+        />
+
+        {/* Use ComboboxPopover to show suggestions in search bar */}
+        <ComboboxPopover>
+          {status === "OK" && data.map((id, description) => (
+            <ComboboxOption key={id} value={description} />
+          ))}
+        </ComboboxPopover>
+      </Combobox>
+    </div>
+  )
+
 }
