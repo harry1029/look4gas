@@ -3,9 +3,18 @@ import { useState, useEffect } from "react";
 // import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import { useLoadScript, GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 
+import usePlacesAutocomplete, {
+  getGeocode, getLatLng
+} from "use-places-autocomplete";
+
+import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
+
 export default function GoogleMapComponent(props) {
 
   // const google = window.google;
+
+  const [markers, setMarkers] = useState([]);
+  const [selected, setSelected] = useState(null);
 
   const libraries = ["places"];
   const mapContainerStyle = {
@@ -28,6 +37,13 @@ export default function GoogleMapComponent(props) {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries
   });
+
+  // Save map state as ref for other function use later without needing to call api
+  const mapRef = React.useRef();
+  const onMapLoad = React.useCallback((map) => {
+    mapRef.current = map;
+  }, []);
+
 
   if (loadError) return "Error Loading maps";
   if (!isLoaded) return "Loading map";
@@ -54,7 +70,7 @@ export default function GoogleMapComponent(props) {
   //     map,
   //     title: "Click to zoom",
   //   });
-  
+
   //   map.addListener("center_changed", () => {
   //     // 3 seconds after the center of the map has changed, pan back to the
   //     // marker.
@@ -75,11 +91,36 @@ export default function GoogleMapComponent(props) {
     //   containerElement={<div style={{ height: `400px` }} />}
     //   mapElement={<div style={{ height: `100%` }} />}
     // />
-    <GoogleMap 
-        mapContainerStyle={mapContainerStyle}
-        zoom={15} 
-        center={center}>
+    <div>
 
-    </GoogleMap>
+      <Search />
+
+
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        zoom={15}
+        center={center}
+        options={options}
+        onLoad={onMapLoad}
+
+      >
+
+        {selected ? (
+          <InfoWindow
+            position={{ lat: selected.lat, lng:selected.lng }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}
+          >
+            <div>
+              hello
+            </div>
+          </InfoWindow>
+        ) : null }
+
+
+      </GoogleMap>
+
+    </div>
   );
 }
