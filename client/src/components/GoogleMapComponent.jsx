@@ -15,27 +15,19 @@ import "@reach/combobox/styles.css";
 export default function GoogleMapComponent(props) {
 
   const { gasStations } = props;
+  const [markers, setMarkers] = useState([]);
+  const [selected, setSelected] = useState(null);
 
   const gasStationMarkers = gasStations.map(x => {
     let marker = {};
     marker["lat"] = parseFloat(x.lat);
     marker["lng"] = parseFloat(x.lng);
+    // setMarkers(prev => ([...prev, {lat: parseFloat(x.lat), lng: parseFloat(x.lng)}]));
     return marker;
   });
-
-
-  // const google = window.google;
-
-
-  const [markers, setMarkers] = useState([]);
-  const [selected, setSelected] = useState(null);
-
-  console.log("GASSTATIONS=======", gasStations)
-  console.log("GASSTATIONSMARKERS=======", markers)
-
-  const markersList = markers.map(marker => {
+  const markersList = gasStationMarkers.map(marker => {
     if (marker["lat"] && marker["lng"]) {
-
+      // setMarkers([...prev, {lat: marker["lat"], lng: marker["lng"]}])
       return (
         <Marker
           key={`${marker.lat}-${marker.lng}`}
@@ -45,6 +37,10 @@ export default function GoogleMapComponent(props) {
     }
   }
   )
+
+
+  console.log("GASSTATIONS=======", gasStations)
+  console.log("GASSTATIONSMARKERS=======", markersList)
 
   const libraries = ["places"];
   const mapContainerStyle = {
@@ -71,8 +67,7 @@ export default function GoogleMapComponent(props) {
   // Save map state as ref for other function use later without needing to call api
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
-    setMarkers([...gasStationMarkers])
-    mapRef.current = map;
+      mapRef.current = map;
   }, []);
 
   // Set up a panTo function used to zoom to the location given lat and lng
@@ -121,6 +116,7 @@ export default function GoogleMapComponent(props) {
   //   });
   // }
 
+
   return (
     // <MapWithAMarker
     //   // googleMapURL=""
@@ -133,7 +129,7 @@ export default function GoogleMapComponent(props) {
       <Search panTo={panTo} />
 
 
-      <GoogleMap
+      {markersList && <GoogleMap
         id="map"
         mapContainerStyle={mapContainerStyle}
         zoom={13}
@@ -158,7 +154,7 @@ export default function GoogleMapComponent(props) {
         ) : null}
 
 
-      </GoogleMap>
+      </GoogleMap>}
 
     </div>
   );
