@@ -1,4 +1,5 @@
 import GasPriceItemList from "./GasPriceItemList";
+import GoogleMapComponent from "./GoogleMapComponent";
 
 export default function Home(props) {
 
@@ -7,6 +8,7 @@ export default function Home(props) {
   return (
     <div>
       <GasPriceItemList gasStations={gasStations} priceUpdates={priceUpdates} reviews={reviews}/>
+      <GoogleMapComponent gasStations={gasStations}></GoogleMapComponent>
     </div>
   );
 }

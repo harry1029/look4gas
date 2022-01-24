@@ -10,12 +10,41 @@ import usePlacesAutocomplete, {
 
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 
+import "@reach/combobox/styles.css";
+
 export default function GoogleMapComponent(props) {
+
+  const { gasStations } = props;
+
+  const gasStationMarkers = gasStations.map(x => {
+    let marker = {};
+    marker["lat"] = parseFloat(x.lat);
+    marker["lng"] = parseFloat(x.lng);
+    return marker;
+  });
+
 
   // const google = window.google;
 
+
   const [markers, setMarkers] = useState([]);
   const [selected, setSelected] = useState(null);
+
+  console.log("GASSTATIONS=======", gasStations)
+  console.log("GASSTATIONSMARKERS=======", markers)
+
+  const markersList = markers.map(marker => {
+    if (marker["lat"] && marker["lng"]) {
+
+      return (
+        <Marker
+          key={`${marker.lat}-${marker.lng}`}
+          position={{ lat: marker["lat"], lng: marker["lng"] }}
+        />
+      )
+    }
+  }
+  )
 
   const libraries = ["places"];
   const mapContainerStyle = {
@@ -42,13 +71,14 @@ export default function GoogleMapComponent(props) {
   // Save map state as ref for other function use later without needing to call api
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
+    setMarkers([...gasStationMarkers])
     mapRef.current = map;
   }, []);
 
   // Set up a panTo function used to zoom to the location given lat and lng
-  const panTo = React.useCallback(({lat, lng}) => {
-    mapRef.current.panTo({lat, lng});
-    mapRef.current.setZoom(16);
+  const panTo = React.useCallback(({ lat, lng }) => {
+    mapRef.current.panTo({ lat, lng });
+    mapRef.current.setZoom(19);
   }, []);
 
 
@@ -93,24 +123,26 @@ export default function GoogleMapComponent(props) {
 
   return (
     // <MapWithAMarker
-    //   // googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuz9pD3RmMX_uvJfqiDzQwNIZJWCYQVck&v=3.exp&libraries=geometry,drawing,places"
+    //   // googleMapURL=""
     //   loadingElement={<div style={{ height: `100%` }} />}
     //   containerElement={<div style={{ height: `400px` }} />}
     //   mapElement={<div style={{ height: `100%` }} />}
     // />
     <div>
 
-      <Search panTo={panTo}/>
+      <Search panTo={panTo} />
 
 
       <GoogleMap
+        id="map"
         mapContainerStyle={mapContainerStyle}
-        zoom={15}
+        zoom={13}
         center={center}
         options={options}
         onLoad={onMapLoad}
 
       >
+        {markersList}
 
         {selected ? (
           <InfoWindow
@@ -132,7 +164,7 @@ export default function GoogleMapComponent(props) {
   );
 }
 
-function Search({panTo}) {
+function Search({ panTo }) {
   // 
   const { ready, value, suggestions: { status, data }, setValue, clearSuggestions } = usePlacesAutocomplete({
     requestOptions: {
@@ -142,37 +174,44 @@ function Search({panTo}) {
     }
   });
 
+  const handleInput = (e) => {
+    setValue(e.target.value);
+  };
+
+  const handleSelect = async (address) => {
+    setValue(address, false);
+    clearSuggestions();
+
+    try {
+      const results = await getGeocode({ address });
+      const { lat, lng } = await getLatLng(results[0]);
+      panTo({ lat, lng });
+    } catch (error) {
+      console.log("😱 Error: ", error);
+    }
+  };
+
   return (
     <div className="search">
       <Combobox
-        onSelect={async (address) => {
-          setValue=(address, false);
-          clearSuggestions()
-          try {
-            // Geocode the address from search bar
-            const results = await getGeocode({address});
-            // Get the lat and lng from the search result
-            const {lat, lng} = await getLatLng(results[0]);
-            panTo({lat, lng});
-            console.log(results[0]);
-          } catch(error) {
-            console.log("error!")
-          }
-        }}
+        onSelect={handleSelect}
       >
-
-        <ComboboxInput value={value} onChange={(e) => {
-          setValue(e.target.value);
-        }}
+        {/* Search box input listener */}
+        <ComboboxInput
+          value={value}
+          onChange={handleInput}
           disabled={!ready}
           placeholder="Enter an address"
         />
 
         {/* Use ComboboxPopover to show suggestions in search bar */}
         <ComboboxPopover>
-          {status === "OK" && data.map((id, description) => (
-            <ComboboxOption key={id} value={description} />
-          ))}
+          <ComboboxList>
+            {status === "OK" &&
+              data.map(({ id, description }) => (
+                <ComboboxOption key={id} value={description} />
+              ))}
+          </ComboboxList>
         </ComboboxPopover>
       </Combobox>
     </div>
