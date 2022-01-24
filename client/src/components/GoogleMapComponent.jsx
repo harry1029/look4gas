@@ -15,7 +15,7 @@ import "@reach/combobox/styles.css";
 export default function GoogleMapComponent(props) {
 
   const { gasStations } = props;
-  const [markers, setMarkers] = useState([]);
+  // const [markers, setMarkers] = useState([]);
   const [selected, setSelected] = useState(null);
 
   const gasStationMarkers = gasStations.map(x => {
