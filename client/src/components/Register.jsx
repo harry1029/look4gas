@@ -31,7 +31,8 @@ export default function Register() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="Login">
+    <div>
+<form onSubmit={handleSubmit} className="Login MarginLogin main_block ">
       <br></br>
       <h2>Register to Look4Gas</h2>
       <br></br>
@@ -89,5 +90,7 @@ export default function Register() {
 
       <input type="submit" className="button" />
     </form>
+    </div>
+    
   )
 }

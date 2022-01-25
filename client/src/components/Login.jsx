@@ -47,7 +47,7 @@ export default function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="Login">
+    <form onSubmit={handleSubmit} className="Login MarginLogin">
       <br></br>
       <h2>Login to Look4Gas</h2>
       <br></br>
