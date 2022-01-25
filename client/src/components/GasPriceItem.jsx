@@ -69,7 +69,7 @@ export default function GasPriceItem(props) {
 
         <div className="gas_price StationDetail">
           <div>
-            <h5><strong>Regular Price: {regular}</strong></h5>
+            <h5><strong>Regular {regular}</strong></h5>
           </div>
 
           <div>

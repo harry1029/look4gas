@@ -1,0 +1,22 @@
+.Map {
+  display: flex;
+  flex-direction: row;
+}
+
+.Margin{
+margin-top: 9rem;
+}
+
+.MapMeasurement {
+position: fixed;
+top: 9rem;
+right:30px;
+margin: auto;
+margin-top: 2rem;
+border-radius: 1rem;
+border-width: 3px;
+border-style: solid;
+border-color: #54a0ff;
+font-size: 1rem;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
