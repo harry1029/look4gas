@@ -71,14 +71,14 @@ export default function SubmitPrice(props) {
 
 
   return (
-    <div className=" PriceMain ">
+    <div className=" PriceMain MarginPrice">
         <div className="details_block StationBorder ">
           <div>
             <img className="gas_station_image GasImage" src='../pioneer.png' alt="image" />
           </div>
           <div className="PriceSubmit">
             <div PriceSubmit>
-              Name: {gasStation && gasStation.name}
+              {gasStation && gasStation.name}
             </div>
             <div PriceSubmit>
               {gasStation && <Rating
@@ -90,10 +90,10 @@ export default function SubmitPrice(props) {
               />}
             </div>
             <div PriceSubmit>
-              Address: {gasStation && gasStation.address}, Toronto, ON <br></br>
+              {gasStation && gasStation.address}, Toronto, ON <br></br>
             </div>
             <div PriceSubmit>
-              Phone: {gasStation && gasStation.station_phone}
+              {gasStation && gasStation.station_phone}
             </div>
           </div>
         </div>

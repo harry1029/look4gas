@@ -57,7 +57,7 @@ export default function Reviews(props) {
 
   return (
     <>
-      <div className="PriceBlock">
+      <div className="PriceBlock MarginReview">
         <div className="details_block">
           <div>
             <img className="gas_station_image" src='../pioneer.png' alt="image"/>

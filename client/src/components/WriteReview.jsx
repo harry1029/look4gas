@@ -52,7 +52,7 @@ export default function WriteReview(props) {
 
 
   return (
-    <div className="WriteReview">
+    <div className="WriteReview MarginReview">
       <div className="form-group ReviewSubform">
       <div className="details_block Spacing">
         <div>
@@ -95,7 +95,7 @@ export default function WriteReview(props) {
             />
           </div>
 
-          <div>
+          <div className="TextAreaCenter">
             <TextareaAutosize
               name="comment"
               value={inputs.comment}
@@ -105,11 +105,11 @@ export default function WriteReview(props) {
               onChange={handleChange}
             />
           </div>
-          <div>
+          <div className="TextAreaCenter">
             <input type="hidden" name="gas_station id" value={props.gasStations.id}></input>
             <input type="hidden" name="user_id" value={props.user.id}></input>
 
-            <input type="submit" className="button ReviewButton" />
+            <input type="submit" className="button ReviewButton " />
           </div>
 
 

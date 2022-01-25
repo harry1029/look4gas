@@ -59,7 +59,7 @@ export default function GasPriceItem(props) {
             />
           </div>
           <div>
-            Address: {address}, Toronto, ON <br></br>
+            Address: {address}<br></br>
           </div>
           <div>
             Phone: {phone}

@@ -21,7 +21,7 @@
   margin-top: 2rem;
   background-color: #CEE2F3;
   width: 40rem;
-  height: 30.5rem;
+  height: 32rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
@@ -115,7 +115,7 @@ padding-top: 1.2rem;
 
 .WriteReviewLabel {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-left: 7rem;
   padding-bottom: 1rem;
 }
@@ -174,4 +174,14 @@ padding-top: 1.2rem;
   align-items: flex-start;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.MarginReview {
+  margin-top: 12rem;
+}
+
+.TextAreaCenter {
+  display: flex;
+justify-content: center;
+padding-bottom: 1rem;
 }
