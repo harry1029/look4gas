@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import "./GoogleMapComponent.scss";
 
 // import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import { useLoadScript, GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
@@ -188,8 +189,8 @@ function Search({ panTo }) {
   };
 
   return (
-    <div className="search">
-      <Combobox
+    <div className="search mid">
+      <Combobox className=""
         onSelect={handleSelect}
       >
         {/* Search box input listener */}

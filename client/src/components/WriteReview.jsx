@@ -22,6 +22,7 @@ export default function WriteReview(props) {
   const [inputs, setInputs] = useState({ comment: "", user_rating: "", user_id: "", gas_station_id: "" });
 
   const navigate = useNavigate();
+  const GasName = gasStation.name.split(" ")[0];
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -56,7 +57,7 @@ export default function WriteReview(props) {
       <div className="form-group ReviewSubform">
       <div className="details_block Spacing">
         <div>
-          <img className="gas_station_image GasImage" src='../pioneer.png' alt="image" />
+          <img className="gas_station_image GasImage" src={`../images/${GasName}.png`} alt="logo" />
         </div>
         <div className="station_details StationDetail">
             <div>

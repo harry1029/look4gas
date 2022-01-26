@@ -16,21 +16,38 @@
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 
+.HeadingReview {
+  color: #418eec;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  padding-right: 33.5rem;
+}
+
+.HeadingPrice {
+  color: #418eec;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  padding-right: 35rem;
+}
+
 .WriteReview {
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 1rem;
   background-color: #CEE2F3;
   width: 40rem;
-  height: 32rem;
+  height: 33rem;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   border-radius: 1rem;
   border-width: 3px;
   border-style: solid;
   border-color: #54a0ff;
   font-size: 1rem;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-bottom: 1rem;
 }
 
 .ReviewItem {
@@ -177,7 +194,7 @@ padding-top: 1.2rem;
 }
 
 .MarginReview {
-  margin-top: 12rem;
+  margin-top: -1rem;
 }
 
 .TextAreaCenter {
