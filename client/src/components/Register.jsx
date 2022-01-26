@@ -31,6 +31,7 @@ export default function Register() {
   };
 
   return (
+    <div className="LoginBgColor">
       <form onSubmit={handleSubmit} className="Login MarginLogin RegisterBlock">
         <br></br>
         <h2>Register to Look4Gas</h2>
@@ -89,5 +90,6 @@ export default function Register() {
         <input type="submit" className="button" />
       </form>
 
+    </div>
   )
 }

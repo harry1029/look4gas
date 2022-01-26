@@ -46,7 +46,7 @@ export default function GoogleMapComponent(props) {
   const libraries = ["places"];
   const mapContainerStyle = {
     // Set the map to 100 so it's 100% inside the container
-    width: "45rem",
+    width: "43rem",
     height: "30rem"
   }
 

@@ -53,70 +53,73 @@ export default function WriteReview(props) {
 
 
   return (
-    <div className="WriteReview MarginReview">
-      <div className="form-group ReviewSubform">
-      <div className="details_block Spacing">
-        <div>
-          <img className="gas_station_image GasImage" src={`../images/${GasName}.png`} alt="logo" />
-        </div>
-        <div className="station_details StationDetail">
+    <div className="BgColor">
+      <div className="WriteReview MarginReview">
+        <div className="form-group ReviewSubform">
+          <div className="details_block Spacing">
             <div>
-              Name: {gasStation && gasStation.name}
+              <img className="gas_station_image GasImage" src={`../images/${GasName}.png`} alt="logo" />
             </div>
-            <div>
+            <div className="station_details StationDetail">
+              <div>
+                Name: {gasStation && gasStation.name}
+              </div>
+              <div>
+                <Rating
+                  name="text-feedback"
+                  value={gasStation.rating}
+                  readOnly
+                  precision={0.5}
+                  emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
+                />
+              </div>
+              <div>
+                Address: {gasStation && gasStation.address}, Toronto, ON <br></br>
+              </div>
+              <div>
+                Phone: {gasStation && gasStation.station_phone}
+              </div>
+            </div>
+
+          </div>
+
+          <form onSubmit={handleSubmit}>
+            <div className="WriteReviewLabel">
+              <label>
+                Write a short review
+              </label>
               <Rating
-                name="text-feedback"
-                value={gasStation.rating}
-                readOnly
+                name="user_rating"
+                value={inputs.user_rating}
                 precision={0.5}
-                emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
+                defaultValue={2.5}
+                onChange={handleChange}
               />
             </div>
-            <div>
-              Address: {gasStation && gasStation.address}, Toronto, ON <br></br>
+
+            <div className="TextAreaCenter">
+              <TextareaAutosize
+                name="comment"
+                value={inputs.comment}
+                aria-label="empty textarea"
+                placeholder="Write review here"
+                style={{ width: 410, height: 200 }}
+                onChange={handleChange}
+              />
             </div>
-            <div>
-              Phone: {gasStation && gasStation.station_phone}
+            <div className="TextAreaCenter">
+              <input type="hidden" name="gas_station id" value={props.gasStations.id}></input>
+              <input type="hidden" name="user_id" value={props.user.id}></input>
+
+              <input type="submit" className="button ReviewButton " />
             </div>
-          </div>
+
+
+          </form>
 
         </div>
-
-        <form onSubmit={handleSubmit}>
-          <div className="WriteReviewLabel">
-            <label>
-              Write a short review
-            </label>
-            <Rating
-              name="user_rating"
-              value={inputs.user_rating}
-              precision={0.5}
-              defaultValue={2.5}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="TextAreaCenter">
-            <TextareaAutosize
-              name="comment"
-              value={inputs.comment}
-              aria-label="empty textarea"
-              placeholder="Write review here"
-              style={{ width: 410, height: 200 }}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="TextAreaCenter">
-            <input type="hidden" name="gas_station id" value={props.gasStations.id}></input>
-            <input type="hidden" name="user_id" value={props.user.id}></input>
-
-            <input type="submit" className="button ReviewButton " />
-          </div>
-
-
-        </form>
-
       </div>
+
     </div>
 
 

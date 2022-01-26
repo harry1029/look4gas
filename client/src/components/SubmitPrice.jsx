@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function SubmitPrice(props) {
 
-  const { user, setState , state } = props;
+  const { user, setState, state } = props;
 
   let { id } = useParams();
   console.log("use params WRITE REVIEW", id);
@@ -72,7 +72,8 @@ export default function SubmitPrice(props) {
 
 
   return (
-    <div className=" PriceMain MarginPrice">
+    <div className="PriceBgColor">
+      <div className=" PriceMain MarginPrice">
         <div className="details_block StationBorder ">
           <div>
             <img className="gas_station_image GasImage" src={`../images/${GasName}.png`} alt="logo" />
@@ -99,45 +100,46 @@ export default function SubmitPrice(props) {
           </div>
         </div>
 
-      <div className=" ">
-        <form onSubmit={handleSubmit} className="PriceFields ReviewSubform ">
-          <div className="PriceFields">
-            <label className="VerticalAlign"><h4><strong>Regular Price:</strong></h4>
-              <input
-                type="number"
-                name="regular_price"
-                value={inputs.regular_price || ""}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
+        <div className=" ">
+          <form onSubmit={handleSubmit} className="PriceFields ReviewSubform ">
+            <div className="PriceFields">
+              <label className="VerticalAlign"><h4><strong>Regular Price:</strong></h4>
+                <input
+                  type="number"
+                  name="regular_price"
+                  value={inputs.regular_price || ""}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
 
-          <div className="PriceFields">
-            <label className="VerticalAlign"><h4><strong>Ultra Price:</strong></h4>
-              <input
-                type="number"
-                name="ultra_price"
-                value={inputs.ultra_price || ""}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
+            <div className="PriceFields">
+              <label className="VerticalAlign"><h4><strong>Ultra Price:</strong></h4>
+                <input
+                  type="number"
+                  name="ultra_price"
+                  value={inputs.ultra_price || ""}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
 
-          <div className="PriceFields">
-            <label className="VerticalAlign"><h4><strong>Premium Price:</strong></h4>
-              <input
-                type="number"
-                name="premium_price"
-                value={inputs.premium_price || ""}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
+            <div className="PriceFields">
+              <label className="VerticalAlign"><h4><strong>Premium Price:</strong></h4>
+                <input
+                  type="number"
+                  name="premium_price"
+                  value={inputs.premium_price || ""}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
 
-          <div className="PriceFields">
-            <input type="submit" className="button reviewbutton" />
-          </div>
-        </form>
+            <div className="PriceFields">
+              <input type="submit" className="button reviewbutton" />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
