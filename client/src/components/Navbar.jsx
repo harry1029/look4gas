@@ -32,36 +32,37 @@ const Navbar = (props) => {
 
         </div>
 
+        <div className="ButtonDisplay">
+          <div className="rightbutton">
+            {!state.loggedIn && <button
+              className="button">
+              <Link to="/login">Login</Link>
+            </button>}
+          </div>
+          <div className="rightbutton">
+            {!state.loggedIn && <button
+              className="button">
+              <Link to="/register">Register</Link>
+            </button>}
+          </div>
 
-        <div className="rightbutton">
-          {!state.loggedIn && <button
-            className="button">
-            <Link to="/login">Login</Link>
-          </button>}
+          <div>
+            {state.loggedIn && <button onClick={Logout}
+              className="button">
+              Logout
+            </button>}
 
-          <br></br>
+            <br></br>
+            <br></br>
 
-          {!state.loggedIn && <button
-            className="button">
-            <Link to="/register">Register</Link>
-          </button>}
+            {state.loggedIn &&
+              <div className="LoggedInUser">
+                <h3>Hi {state.currentUser.first_name}!
+                </h3>
+              </div>}
+          </div>
         </div>
 
-        <div>
-          {state.loggedIn && <button onClick={Logout}
-            className="button">
-            Logout
-          </button>}
-
-          <br></br>
-          <br></br>
-
-          {state.loggedIn &&
-            <div className="LoggedInUser">
-              <h3>Hi {state.currentUser.first_name}!
-              </h3>
-            </div>}
-        </div>
 
       </nav>
 

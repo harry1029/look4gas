@@ -23,8 +23,14 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-evenly;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.ButtonDistlay {
+  display: flex;
+  flex-direction: row;
+  
 }
 
 .reviewbutton {

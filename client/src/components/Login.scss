@@ -6,16 +6,15 @@
 }
 
 .MarginLogin {
-  margin-top: 12rem;
+  margin-top: 30rem;
 }
 
-.RegisterBlock {
+.LoginBlock {
   display: flex;
   flex-direction: column;
-  margin-top: 10rem;
   background-color: #CEE2F3;
   width: 45rem;
-  height: 15rem;
+  height: 17rem;
   justify-content: space-evenly;
   margin: auto;
   margin-top: 2rem;
@@ -25,4 +24,24 @@
   border-color: #54a0ff;
   font-size: 1rem;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-bottom: 1rem;
+}
+
+
+.RegisterBlock {
+  display: flex;
+  flex-direction: column;
+  background-color: #CEE2F3;
+  width: 45rem;
+  height: 26rem;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #54a0ff;
+  font-size: 1rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-bottom: 1rem;
 }

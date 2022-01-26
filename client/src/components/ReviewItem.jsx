@@ -23,7 +23,7 @@ export default function ReviewItem (props) {
     <div className="ReviewMainBlock">
         <div className="details_block">
           <div>
-          {userInfo && <Avatar alt={`${userInfo.first_name}`} src="/static/images/avatar/1.jpg" sx={{ width: 56, height: 56, bgcolor: lightBlue[500] }} />}
+          {userInfo && <Avatar alt={`${userInfo.first_name}`} src="/static/images/avatar/1.jpg" sx={{ m:1, width: 56, height: 56, bgcolor: lightBlue[500] }} />}
           </div>
           <div className=" ReviewDetail">
             {userInfo && <div>{`${userInfo.first_name}`}</div>}
