@@ -100,7 +100,7 @@ export default function Reviews(props) {
         </div>}
 
       </div>
-
+      <h3 className="HeadingPrice" >Prices</h3>
       <div className="PriceBlock">
         <div className="PriceHeadings">
           <div className="StationPrice center">
@@ -149,7 +149,7 @@ export default function Reviews(props) {
         </div>
 
       </div>
-
+      <h3 className="HeadingReview" >Reviews</h3>      
       <ReviewItemList stationId={id} reviews={reviews} />
       <Outlet />
     </>
