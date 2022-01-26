@@ -1,11 +1,15 @@
 @import "../styles/mixins.scss";
 @import "../styles/variables.scss";
 
+a:hover {
+  text-decoration: none;
+}
+
 .button {
   border-radius: 2rem;
   border: 0;
   font-size: 1.5rem;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   height: 3rem;
   line-height: 1.2rem;
   margin-right: 1rem;
@@ -15,7 +19,6 @@
   border-color: #54a0ff;
   color: #3c91f8;
   background-color: #accaee;
-  
 }
 
 .rightbutton {
@@ -33,14 +36,6 @@
   width: 10rem;
 }
 
-.button:hover {
-  @include button-active;
-
-  color: #54a0ff;
-  background-color: $white;
-  border: 2px solid transparent;
-}
-
 .button--danger {
   color: $danger-color;
   border-color: $danger-color;
@@ -53,18 +48,6 @@
   background-color: transparent;
 }
 
-.button--danger:hover {
-  color: $white;
-  background-color: $danger-color;
-}
-
-.button--confirm:hover {
-  color: $white;
-  background-color: $confirm-color;
-}
-
-
-
 .button:focus {
   outline: none;
 }
@@ -75,4 +58,25 @@
   color: $white;
   background-color: transparent;
   opacity: 0.7;
+}
+
+.button:hover {
+  @include button-active;
+
+  color: #54a0ff;
+  background-color: $white;
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+.button--danger:hover {
+  color: $white;
+  background-color: $danger-color;
+  text-decoration: none;
+}
+
+.button--confirm:hover {
+  color: $white;
+  background-color: $confirm-color;
+  text-decoration: none;
 }

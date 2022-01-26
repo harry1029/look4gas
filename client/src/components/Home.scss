@@ -1,22 +1,36 @@
-.Map {
+.home {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 11rem;
 }
 
-.Margin{
-margin-top: 10rem;
+.stations {
 }
 
-.MapMeasurement {
-position: fixed;
-top: 10rem;
-right:30px;
-margin: auto;
-margin-top: 2rem;
-border-radius: 1rem;
-border-width: 3px;
-border-style: solid;
-border-color: #54a0ff;
-font-size: 1rem;
-font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+// .map {
+//   margin: auto;
+//   margin-top: 2rem;
+//   border-radius: 1rem;
+//   border-width: 3px;
+//   border-style: solid;
+//   border-color: #54a0ff;
+//   font-size: 1rem;
+//   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+// }
+
+.map .googlemap {
+  margin: auto;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #54a0ff;
+  font-size: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.search-input {
+  position: absolute;
+  z-index: 1;
 }

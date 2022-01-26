@@ -124,7 +124,7 @@ export default function GoogleMapComponent(props) {
     //   containerElement={<div style={{ height: `400px` }} />}
     //   mapElement={<div style={{ height: `100%` }} />}
     // />
-    <div>
+    <div className="googlemap">
 
       <Search panTo={panTo} />
 
@@ -194,6 +194,7 @@ function Search({ panTo }) {
       >
         {/* Search box input listener */}
         <ComboboxInput
+          className="search-input"
           value={value}
           onChange={handleInput}
           disabled={!ready}

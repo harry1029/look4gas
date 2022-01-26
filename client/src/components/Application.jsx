@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './Application.scss';
 import useApplicationData from '../hooks/useApplicationData';
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 // Using react-router
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -20,6 +18,7 @@ import ReviewItem from "./ReviewItem";
 import StationRating from "./Rating";
 import SubmitPrice from "./SubmitPrice";
 import GoogleMapComponent from "./GoogleMapComponent";
+import LoginTest from "./LoginTest";
 
 
 export default function Application(props) {
@@ -55,7 +54,7 @@ export default function Application(props) {
   
   return (
     <BrowserRouter>
-      <div div className="Application" >
+      <div className="Application" >
         <Navbar setState={setState} state={state}/>
         
         <Routes>
@@ -71,7 +70,7 @@ export default function Application(props) {
             <Route path="write_review/:id" element={<WriteReview user={state.currentUser} gasStations={state.gasStations} setState={setState}/>} />
             <Route path="rating" element={<StationRating gasStations={state.gasStations} reviews={state.reviews}/>} />
             <Route path="submit_price/:id" element={<SubmitPrice gasStations={state.gasStations} user={state.currentUser} priceUpdates={state.priceUpdates} reviews={state.reviews} state={state} setState={setState}/>} />
-            <Route path="google_map" element={<GoogleMapComponent />} />
+            <Route path="login_test" element={<LoginTest setState={setState}/>} />
 
 
         </Routes>
