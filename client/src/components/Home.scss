@@ -1,7 +1,9 @@
 .Map {
   display: flex;
   flex-direction: row;
-}
+  font-family: Poppins-Regular, sans-serif;
+  background-color: #E6ECF2;
+  }
 
 .Margin{
 margin-top: -2rem;
@@ -9,7 +11,7 @@ margin-top: -2rem;
 
 .MapMeasurement {
 position: fixed;
-top: 10rem;
+top: 9.90rem;
 right:30px;
 margin: auto;
 margin-top: 2rem;

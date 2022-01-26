@@ -47,7 +47,8 @@ export default function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="Login MarginLogin LoginBlock" >
+    <div className="LoginBgColor">
+      <form onSubmit={handleSubmit} className="Login MarginLogin LoginBlock" >
         <br></br>
         <h2>Login to Look4Gas</h2>
         <br></br>
@@ -74,7 +75,6 @@ export default function Login(props) {
         </div>
         <input type="submit" className="button" />
       </form>
-    
-
+    </div>
   )
 }

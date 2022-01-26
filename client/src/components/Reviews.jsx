@@ -57,7 +57,7 @@ export default function Reviews(props) {
   }, [priceUpdates, reviews]);
 
   return (
-    <>
+    <div className="BgColor">
       <div className="PriceBlock MarginReview">
         <div className="details_block">
           <div>
@@ -153,7 +153,7 @@ export default function Reviews(props) {
       <h3 className="HeadingReview" >Reviews</h3>      
       <ReviewItemList stationId={id} reviews={reviews} />
       <Outlet />
-    </>
+    </div>
 
 
   );
