@@ -78,7 +78,7 @@ export default function SubmitPrice(props) {
           </div>
           <div className="PriceSubmit">
             <div PriceSubmit>
-              {gasStation && gasStation.name}
+              Name: {gasStation && gasStation.name}
             </div>
             <div PriceSubmit>
               {gasStation && <Rating
@@ -90,10 +90,10 @@ export default function SubmitPrice(props) {
               />}
             </div>
             <div PriceSubmit>
-              {gasStation && gasStation.address}, Toronto, ON <br></br>
+              Address: {gasStation && gasStation.address}, Toronto, ON <br></br>
             </div>
             <div PriceSubmit>
-              {gasStation && gasStation.station_phone}
+              Phone: {gasStation && gasStation.station_phone}
             </div>
           </div>
         </div>
