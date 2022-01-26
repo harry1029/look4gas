@@ -28,6 +28,7 @@ export default function Reviews(props) {
 
   const priceUpdate = getMostRecentPriceUpdate(priceUpdates, id);
   console.log("STATE LINE 26", state);
+  const GasName = gasStation.name.split(" ")[0];
 
   console.log({priceUpdate});
   useEffect(() => {
@@ -60,7 +61,7 @@ export default function Reviews(props) {
       <div className="PriceBlock MarginReview">
         <div className="details_block">
           <div>
-            <img className="gas_station_image" src='../pioneer.png' alt="image"/>
+            <img className="gas_station_image" src={`../images/${GasName}.png`} alt="logo"/>
           </div>
           <div className="station_details StationDetail">
             <div>

@@ -20,6 +20,7 @@ export default function GasPriceItem(props) {
   const [userInfo, setUserInfo] = useState();
 
   const priceUpdate = getMostRecentPriceUpdate(priceUpdates, stationId);
+  const GasName = name.split(" ")[0];
 
   console.log("Updates: ", priceUpdates);
 
@@ -43,7 +44,7 @@ export default function GasPriceItem(props) {
     <div className="main_block">
       <div className="details_block">
         <div>
-          <img className="gas_station_image" src='pioneer.png' />
+          <img className="gas_station_image" src={`../images/${GasName}.png`} alt="logo" />
         </div>
         <div className="station_details StationDetail">
           <div>

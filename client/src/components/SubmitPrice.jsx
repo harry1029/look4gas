@@ -20,6 +20,7 @@ export default function SubmitPrice(props) {
   const [inputs, setInputs] = useState({});
 
   const navigate = useNavigate();
+  const GasName = gasStation.name.split(" ")[0];
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -74,7 +75,7 @@ export default function SubmitPrice(props) {
     <div className=" PriceMain MarginPrice">
         <div className="details_block StationBorder ">
           <div>
-            <img className="gas_station_image GasImage" src='../pioneer.png' alt="image" />
+            <img className="gas_station_image GasImage" src={`../images/${GasName}.png`} alt="logo" />
           </div>
           <div className="PriceSubmit">
             <div PriceSubmit>
