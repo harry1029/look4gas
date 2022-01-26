@@ -24,8 +24,6 @@ City.create(name: 'Toronto', province_id: 1)
 City.create(name: 'Montreal', province_id: 2)
 
 # Gas station dummies
-GasStation.create(name: "123 GasStation", rating: 5.0, address: "123 Test street", city_id: 1, station_phone: Faker::PhoneNumber.phone_number, regular_price: 10, ultra_price: 20, premium_price: 30)
-GasStation.create(name: "BrandNew GasStation", address: "BrandNew Test street", city_id: 2)
 
 # Use the json fetched from google places api to populate gas stations as dummy variables
 toronto_results.each do |result|
@@ -54,3 +52,5 @@ Review.create(comment: 'I am review #7', user_rating: 4.1, user_id: 1, gas_stati
 PriceUpdate.create(user_id: 1, gas_station_id: 1)
 PriceUpdate.create(user_id: 2, gas_station_id: 2)
 PriceUpdate.create(user_id: 3, gas_station_id: 3)
+PriceUpdate.create(user_id: 1, gas_station_id: 4)
+PriceUpdate.create(user_id: 2, gas_station_id: 5)
