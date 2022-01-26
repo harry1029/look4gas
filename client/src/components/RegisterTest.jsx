@@ -46,13 +46,26 @@ export default function RegisterTest() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="lg">
         <Box
           sx={{
             marginTop: 28,
+            width: 600,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            textAlign: 'center',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            paddingLeft: 3,
+            paddingRight: 3,
+            paddingBottom: 3,
+            paddingTop:3,
+            borderColor: '#54a0ff',
+            borderStyle: 'solid',
+            borderWidth: 3,
+            borderRadius: 5,
+            backgroundColor: '#CEE2F3'
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -124,7 +137,7 @@ export default function RegisterTest() {
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  label="I want to receive inspiration, promotions and updates via email."
                 />
               </Grid>
             </Grid>
@@ -132,9 +145,9 @@ export default function RegisterTest() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, borderRadius: 5, borderStyle: 'solid', borderWidth: 3, borderColor: '#54a0ff', color: '#3c91f8', backgroundColor: '#accaee' }}
             >
-              Sign Up
+              <strong>Sign Up</strong>
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>

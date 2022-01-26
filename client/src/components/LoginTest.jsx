@@ -19,6 +19,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { blueGrey } from "@mui/material/colors";
 
 export default function LoginTest(props) {
   const { setState } = props;
@@ -60,14 +61,26 @@ export default function LoginTest(props) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="lg">
         <Box
           sx={{
-            marginTop: 30,
+            marginTop: 27.5,
+            width: 600,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            zIndex: 1
+            zIndex: 1,
+            paddingLeft: 3,
+            paddingRight: 3,
+            paddingBottom: 3,
+            paddingTop:3,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            borderColor: '#54a0ff',
+            borderStyle: 'solid',
+            borderWidth: 3,
+            borderRadius: 5,
+            backgroundColor: '#CEE2F3'
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
@@ -107,9 +120,9 @@ export default function LoginTest(props) {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, borderRadius: 5, borderStyle: 'solid', borderWidth: 3, borderColor: '#54a0ff', color: '#3c91f8', backgroundColor: '#accaee' }}
             >
-              Sign In
+              <strong>Sign In</strong>
             </Button>
             <Grid container>
               <Grid item xs>
