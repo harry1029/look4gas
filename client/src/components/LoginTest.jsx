@@ -91,6 +91,11 @@ export default function LoginTest(props) {
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, zIndex: 2, }}>
             <TextField
+              sx={
+                {
+                  backgroundColor: '#fff'
+                }
+              }
               margin="normal"
               required
               fullWidth
@@ -102,6 +107,11 @@ export default function LoginTest(props) {
               onChange={handleChange}
             />
             <TextField
+              sx={
+                {
+                  backgroundColor: '#fff'
+                }
+              }
               margin="normal"
               required
               fullWidth
@@ -124,18 +134,6 @@ export default function LoginTest(props) {
             >
               <strong>Sign In</strong>
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
@@ -145,12 +143,12 @@ export default function LoginTest(props) {
 }
 const theme = createTheme();
 
-function Copyright(props: any) {
+function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Look4Gas
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}

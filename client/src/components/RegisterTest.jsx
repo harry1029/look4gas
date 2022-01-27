@@ -68,7 +68,7 @@ export default function RegisterTest() {
             backgroundColor: '#CEE2F3'
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -78,6 +78,11 @@ export default function RegisterTest() {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  sx={
+                    {
+                      backgroundColor: '#fff'
+                    }
+                  }
                   autoComplete="given-name"
                   name="first_name"
                   required
@@ -85,11 +90,17 @@ export default function RegisterTest() {
                   id="first_name"
                   label="First Name"
                   autoFocus
+                  backgroundColor="white"
                   onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  sx={
+                    {
+                      backgroundColor: '#fff'
+                    }
+                  }
                   required
                   fullWidth
                   id="last_name"
@@ -101,6 +112,11 @@ export default function RegisterTest() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  sx={
+                    {
+                      backgroundColor: '#fff'
+                    }
+                  }
                   required
                   fullWidth
                   id="email"
@@ -112,6 +128,11 @@ export default function RegisterTest() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  sx={
+                    {
+                      backgroundColor: '#fff'
+                    }
+                  }
                   required
                   fullWidth
                   name="password"
@@ -124,6 +145,11 @@ export default function RegisterTest() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  sx={
+                    {
+                      backgroundColor: '#fff'
+                    }
+                  }
                   required
                   fullWidth
                   name="phone"
@@ -136,6 +162,7 @@ export default function RegisterTest() {
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
+                
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
                   label="I want to receive inspiration, promotions and updates via email."
                 />
@@ -149,13 +176,6 @@ export default function RegisterTest() {
             >
               <strong>Sign Up</strong>
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />
@@ -164,12 +184,12 @@ export default function RegisterTest() {
   )
 }
 
-function Copyright(props: any) {
+function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Look4Gas
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
