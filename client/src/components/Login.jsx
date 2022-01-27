@@ -7,6 +7,21 @@ import { getUser } from "../helpers/loginHelper";
 
 import { useNavigate } from "react-router-dom";
 
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { blueGrey } from "@mui/material/colors";
+
 export default function Login(props) {
   const { setState } = props;
   const [user, setUser] = useState({ email: '', password: '' });
@@ -46,34 +61,99 @@ export default function Login(props) {
   }
 
   return (
-    <div className="login">
-      <div className="login-form">
-        <form onSubmit={handleSubmit} className="Login">
-          <span className="login-form-title">Login to Look4Gas</span>
-          <div className="form-group">
-            <label for="email">Enter your email:</label>
-            <input
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="lg">
+        <Box
+          sx={{
+            marginTop: 27.5,
+            width: 600,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            zIndex: 1,
+            paddingLeft: 3,
+            paddingRight: 3,
+            paddingBottom: 3,
+            paddingTop: 3,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            borderColor: '#54a0ff',
+            borderStyle: 'solid',
+            borderWidth: 3,
+            borderRadius: 5,
+            backgroundColor: '#CEE2F3'
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, zIndex: 2, }}>
+            <TextField
+              sx={
+                {
+                  backgroundColor: '#fff'
+                }
+              }
+              margin="normal"
+              required
+              fullWidth
               id="email"
-              type="text"
+              label="Email Address"
               name="email"
-              value={user.email || ""}
+              autoComplete="email"
+              autoFocus
               onChange={handleChange}
             />
-
-          </div>
-          <div className="form-group">
-            <label for="password">Enter your password:</label>
-            <input id="password"
-              type="password"
+            <TextField
+              sx={
+                {
+                  backgroundColor: '#fff'
+                }
+              }
+              margin="normal"
+              required
+              fullWidth
               name="password"
-              value={user.password || ""}
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
               onChange={handleChange}
             />
-
-          </div>
-          <input type="submit" className="button" />
-        </form>
-      </div>
-    </div>
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2, borderRadius: 5, borderStyle: 'solid', borderWidth: 3, borderColor: '#54a0ff', color: '#3c91f8', backgroundColor: '#accaee' }}
+            >
+              <strong>Sign In</strong>
+            </Button>
+          </Box>
+        </Box>
+        <Copyright sx={{ mt: 8, mb: 4 }} />
+      </Container>
+    </ThemeProvider>
   )
+}
+
+const theme = createTheme();
+
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Look4Gas
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
