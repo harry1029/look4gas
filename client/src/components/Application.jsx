@@ -20,6 +20,8 @@ import ReviewItem from "./ReviewItem";
 import StationRating from "./Rating";
 import SubmitPrice from "./SubmitPrice";
 import GoogleMapComponent from "./GoogleMapComponent";
+import LoginTest from "./LoginTest";
+import RegisterTest from "./RegisterTest";
 
 
 export default function Application(props) {
@@ -61,8 +63,8 @@ export default function Application(props) {
         <Routes>
           {/* Pass props to routes */}
             <Route path="/" element={<Home gasStations={state.gasStations} priceUpdates={state.priceUpdates} user={state.currentUser} reviews={state.reviews}/>} />
-            <Route path="login" element={<Login setState={setState} />} />
-            <Route path="register" element={<Register />} />
+            {/*<Route path="login" element={<Login setState={setState} />} />
+            <Route path="register" element={<Register />} />*/}
             <Route path="*" element={<NoPage />} />
             <Route path="gas_price_item" element={<GasPriceItem />} />
             <Route path="gas_price_item_list" element={<GasPriceItemList />} />
@@ -72,6 +74,8 @@ export default function Application(props) {
             <Route path="rating" element={<StationRating gasStations={state.gasStations} reviews={state.reviews}/>} />
             <Route path="submit_price/:id" element={<SubmitPrice gasStations={state.gasStations} user={state.currentUser} priceUpdates={state.priceUpdates} reviews={state.reviews} state={state} setState={setState}/>} />
             <Route path="google_map" element={<GoogleMapComponent />} />
+            <Route path="login" element={<LoginTest setState={setState}/>} />
+            <Route path="register" element={<RegisterTest setState={setState}/>} />
 
 
         </Routes>
