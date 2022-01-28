@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './Application.scss';
 import useApplicationData from '../hooks/useApplicationData';
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 // Using react-router
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";

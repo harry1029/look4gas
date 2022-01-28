@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const Navbar = (props) => {
   const { state, setState } = props;
   const navigate = useNavigate();
-  console.log("STATE", state.loggedIn);
 
   const Logout = function () {
 
@@ -40,26 +39,26 @@ const Navbar = (props) => {
             </button>}
           </div>
           <div>
-              {state.loggedIn && <button onClick={Logout}
-                className="button">
-                Logout
-              </button>}
-            </div>
-          
-          <div className="rightbutton">
-            
-          <div>
-            {!state.loggedIn && <button
+            {state.loggedIn && <button onClick={Logout}
               className="button">
-              <Link to="/register">Register</Link>
+              Logout
             </button>}
           </div>
 
-          <div className="LoggedInUser">
-            {state.loggedIn &&
+          <div className="rightbutton">
+
+            <div>
+              {!state.loggedIn && <button
+                className="button">
+                <Link to="/register">Register</Link>
+              </button>}
+            </div>
+
+            <div className="LoggedInUser">
+              {state.loggedIn &&
                 `Hi ${state.currentUser.first_name}!`
-                }
-              </div>
+              }
+            </div>
           </div>
         </div>
 

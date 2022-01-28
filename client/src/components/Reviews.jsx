@@ -13,34 +13,24 @@ import { calculateRating } from "../helpers/ratingHelper";
 
 import axios from "axios";
 
-import { getUserIdFromPriceUpdate, getPriceUpdate, getMostRecentPriceUpdate } from "../helpers/selectors";
+import { getUserIdFromPriceUpdate, getMostRecentPriceUpdate } from "../helpers/selectors";
 
 export default function Reviews(props) {
 
-  const { gasStations, priceUpdates, reviews, state, setState } = props;
+  const { priceUpdates, reviews, state } = props;
 
   const [userInfo, setUserInfo] = useState();
 
   let { id } = useParams();
   let gasStation = props.gasStations.find(gasStation => gasStation.id == id);
 
-  // const [gasStation, setGasStation] = useState(props.gasStations.find(gasStation => gasStation.id == id))
-
   const priceUpdate = getMostRecentPriceUpdate(priceUpdates, id);
-  console.log("STATE LINE 26", state);
   const GasName = gasStation.name.split(" ")[0];
 
-  console.log({priceUpdate});
   useEffect(() => {
-    //setGasStation(prev => ({ ...prev, rating: calculateRating(gasStation, reviews)}))
-    // gasStation = props.gasStations.find(gasStation => gasStation.id == id);
-    // gasStation.rating = calculateRating(gasStation, reviews)
     axios.get(`http://localhost:3001/api/users/`)
       .then(response => {
-        console.log(" RESPONE DATA",response.data);
-        console.log({priceUpdates, id});
         const priceSubmitUserId = getUserIdFromPriceUpdate(priceUpdates, id);
-        console.log({priceSubmitUserId});
         axios.get(`http://localhost:3001/api/users/${priceSubmitUserId}`)
         .then(response => {
           setUserInfo(response.data);

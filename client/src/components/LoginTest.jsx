@@ -35,8 +35,6 @@ export default function LoginTest(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(user);
-
     const email = user.email;
     const pass = user.password;
 
@@ -45,7 +43,6 @@ export default function LoginTest(props) {
       .get(url)
       .then((res) => {
         const result = getUser(res.data, email, pass);
-        console.log("Result: ", result);
         if (!result) {
           console.log("User does not exist!")
         } else {

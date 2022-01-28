@@ -32,13 +32,11 @@ export default function RegisterTest() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(info);
 
     const url = "http://localhost:3001/api/users/";
     axios
       .post(url, info, { withCredentials: true })
       .then((res) => {
-        console.log(res.data);
         navigate("/login");
       })
       .catch((err) => console.log(err));

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./GoogleMapComponent.scss";
 
 // import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
@@ -16,19 +16,16 @@ import "@reach/combobox/styles.css";
 export default function GoogleMapComponent(props) {
 
   const { gasStations } = props;
-  // const [markers, setMarkers] = useState([]);
   const [selected, setSelected] = useState(null);
 
   const gasStationMarkers = gasStations.map(x => {
     let marker = {};
     marker["lat"] = parseFloat(x.lat);
     marker["lng"] = parseFloat(x.lng);
-    // setMarkers(prev => ([...prev, {lat: parseFloat(x.lat), lng: parseFloat(x.lng)}]));
     return marker;
   });
   const markersList = gasStationMarkers.map(marker => {
     if (marker["lat"] && marker["lng"]) {
-      // setMarkers([...prev, {lat: marker["lat"], lng: marker["lng"]}])
       return (
         <Marker
           key={`${marker.lat}-${marker.lng}`}
@@ -38,11 +35,6 @@ export default function GoogleMapComponent(props) {
     }
   }
   )
-
-
-  console.log("GASSTATIONS=======", gasStations)
-  console.log("GASSTATIONSMARKERS=======", markersList)
-
   const libraries = ["places"];
   const mapContainerStyle = {
     // Set the map to 100 so it's 100% inside the container
@@ -68,7 +60,7 @@ export default function GoogleMapComponent(props) {
   // Save map state as ref for other function use later without needing to call api
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
-      mapRef.current = map;
+    mapRef.current = map;
   }, []);
 
   // Set up a panTo function used to zoom to the location given lat and lng
@@ -77,58 +69,12 @@ export default function GoogleMapComponent(props) {
     mapRef.current.setZoom(19);
   }, []);
 
-
   if (loadError) return "Error Loading maps";
   if (!isLoaded) return "Loading map";
 
-  // const MapWithAMarker = withScriptjs(withGoogleMap(props =>
-  //   <GoogleMap
-  //     defaultZoom={8}
-  //     defaultCenter={{ lat: -34.397, lng: 150.644 }}
-  //   >
-  //     <Marker
-  //       position={{ lat: -34.397, lng: 150.644 }}
-  //     />
-  //   </GoogleMap>
-  // ));
-
-  // function initMap() {
-  //   const myLatlng = { lat: -25.363, lng: 131.044 };
-  //   const map = new google.maps.Map(document.getElementById("map"), {
-  //     zoom: 4,
-  //     center: myLatlng,
-  //   });
-  //   const marker = new google.maps.Marker({
-  //     position: myLatlng,
-  //     map,
-  //     title: "Click to zoom",
-  //   });
-
-  //   map.addListener("center_changed", () => {
-  //     // 3 seconds after the center of the map has changed, pan back to the
-  //     // marker.
-  //     window.setTimeout(() => {
-  //       map.panTo(marker.getPosition());
-  //     }, 3000);
-  //   });
-  //   marker.addListener("click", () => {
-  //     map.setZoom(8);
-  //     map.setCenter(marker.getPosition());
-  //   });
-  // }
-
-
   return (
-    // <MapWithAMarker
-    //   // googleMapURL=""
-    //   loadingElement={<div style={{ height: `100%` }} />}
-    //   containerElement={<div style={{ height: `400px` }} />}
-    //   mapElement={<div style={{ height: `100%` }} />}
-    // />
     <div>
-
       <Search panTo={panTo} />
-
 
       {markersList && <GoogleMap
         id="map"
@@ -184,7 +130,7 @@ function Search({ panTo }) {
       const { lat, lng } = await getLatLng(results[0]);
       panTo({ lat, lng });
     } catch (error) {
-      console.log("😱 Error: ", error);
+      console.log("Error: ", error);
     }
   };
 
@@ -213,5 +159,4 @@ function Search({ panTo }) {
       </Combobox>
     </div>
   )
-
 }

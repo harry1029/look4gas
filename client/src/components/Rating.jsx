@@ -2,7 +2,6 @@ import { Rating } from '@mui/material';
 import { Star } from '@mui/icons-material';
 
 export default function StationRating(props) {
-  const { stationId, name, rating, address, cityId, phone, regular, ultra, premium, priceUpdates } = props;
 
   return (
     <div>

@@ -9,10 +9,10 @@ export default function Home(props) {
   return (
     <div className="Map">
       <div className="Margin">
-      <GasPriceItemList gasStations={gasStations} priceUpdates={priceUpdates} reviews={reviews}/>
+        <GasPriceItemList gasStations={gasStations} priceUpdates={priceUpdates} reviews={reviews} />
       </div>
       <div className="MapMeasurement">
-      <GoogleMapComponent gasStations={gasStations}></GoogleMapComponent>
+        <GoogleMapComponent gasStations={gasStations}></GoogleMapComponent>
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import "./Login.scss";
 import "./Button.scss";
-import useApplicationData from "../hooks/useApplicationData";
 
 import { getUser } from "../helpers/loginHelper";
 
@@ -22,17 +21,13 @@ export default function Login(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(user);
-
     const email = user.email;
     const pass = user.password;
-
     const url = "http://localhost:3001/api/users";
     await axios
       .get(url)
       .then((res) => {
         const result = getUser(res.data, email, pass);
-        console.log("Result: ", result);
         if (!result) {
           console.log("User does not exist!")
         } else {
